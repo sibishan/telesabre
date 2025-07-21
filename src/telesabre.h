@@ -53,6 +53,7 @@ typedef struct {
     int it;
     int it_without_progress;
     bool safety_valve_activated;
+    bool safety_valve_exiting;
 
     path_t** attraction_paths;
     int *attraction_paths_front_idx;

@@ -57,6 +57,8 @@ typedef struct config {
     int max_attempts;
     int required_successes;
 
+    bool optimize_initial_layout;
+
     cJSON *json;
 } config_t;
 
@@ -86,7 +88,8 @@ typedef struct config {
 #define TS_CONFIG_BOOL_ENTRIES \
     X(optimize_initial) \
     X(save_report) \
-    X(enable_passing_core_emptying_teleport_possibility)
+    X(enable_passing_core_emptying_teleport_possibility) \
+    X(optimize_initial_layout)
 
 #define TS_CONFIG_STRING_ENTRIES \
     X(name) \

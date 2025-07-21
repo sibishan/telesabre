@@ -53,13 +53,15 @@ bool gate_is_two_qubit(const gate_t *gate);
 bool gates_share_qubits(const gate_t *gate1, const gate_t *gate2);
 
 
-circuit_t* circuit_from_qasm(const char *filename);
+circuit_t *circuit_from_qasm(const char *filename);
 
-circuit_t* circuit_from_json(const char *filename);
+circuit_t *circuit_from_json(const char *filename);
 
 void circuit_build_dependencies(circuit_t *circuit);
 
 void circuit_build_json(circuit_t *circuit);
+
+circuit_t *circuit_copy_reverse(const circuit_t *circuit);
 
 void circuit_print(circuit_t *circuit);
 

@@ -51,6 +51,8 @@ config_t* config_new() {
     config->max_attempts = 10;
     config->required_successes = 1;
 
+    config->optimize_initial_layout = false;
+
     config->json = NULL;
     return config;
 }

@@ -49,6 +49,7 @@ telesabre_t* telesabre_init(config_t* config, device_t* device, circuit_t* circu
     ts->it_without_progress = 0;
 
     ts->safety_valve_activated = false;
+    ts->safety_valve_exiting = false;
     ts->last_progress_layout = layout_copy(ts->layout);
 
     // Array of candidate operations
@@ -108,9 +109,10 @@ void telesabre_safety_valve_check(telesabre_t *ts) {
         ts->result.num_deadlocks++;
     }
 
-    if (ts->safety_valve_activated && ts->it_without_progress > ts->config->safety_valve_iters + ts->config->max_safety_valve_iters && !ts->config->save_report) {
+    if (ts->safety_valve_activated && ts->it_without_progress > ts->config->safety_valve_iters + ts->config->max_safety_valve_iters && !ts->safety_valve_exiting) {
         printf("Safety valve still activated after %d iterations, exiting...\n", ts->it_without_progress);
         ts->config->save_report = true;
+        ts->safety_valve_exiting = true;
         ts->config->max_iterations = ts->it + ts->config->max_safety_valve_iters;
     }
 }
@@ -384,6 +386,7 @@ float telesabre_evaluate_op_energy(telesabre_t* ts, const op_t* op) {
 
     float front_energy = 0.0f;
     float extended_energy = 0.0f;
+    int g = 0;
 
     int extended_set_size = 0;
 
@@ -440,11 +443,12 @@ float telesabre_evaluate_op_energy(telesabre_t* ts, const op_t* op) {
             }
 
             if (i == 0) {
-                front_energy += gate_energy;
+                front_energy += gate_energy * (1 + (float)g / 10);
             } else {
-                extended_energy += gate_energy;
+                extended_energy += gate_energy * (1 + (float)g / 10);
                 extended_set_size++;
             }
+            g++;
 
             // Consider only one gate in safety valve mode
             if (ts->safety_valve_activated) {
@@ -539,7 +543,8 @@ void telesabre_collect_candidate_tele_ops(telesabre_t *ts) {
             core_t fwd_target_core = device->phys_to_core[fwd_target];
             core_t fwd_source_core = device->phys_to_core[fwd_source];
 
-            if (fwd_source == p1 && device_has_edge(device, fwd_source, fwd_mediator) &&
+            if (fwd_source == p1 && fwd_target_core != fwd_source_core &&
+                device_has_edge(device, fwd_source, fwd_mediator) &&
                 device->qubit_is_comm[fwd_mediator] && layout_is_phys_free(layout, fwd_mediator) &&
                 device->qubit_is_comm[fwd_target] && layout_is_phys_free(layout, fwd_target) &&
                 layout_get_core_remaining_capacity(layout, fwd_target_core) >= 2) {
@@ -556,7 +561,8 @@ void telesabre_collect_candidate_tele_ops(telesabre_t *ts) {
             core_t rev_target_core = device->phys_to_core[rev_target];
             core_t rev_source_core = device->phys_to_core[rev_source];
 
-            if (rev_source == p2 && device_has_edge(device, rev_source, rev_mediator) &&
+            if (rev_source == p2 && rev_target_core != rev_source_core &&
+                device_has_edge(device, rev_source, rev_mediator) &&
                 device->qubit_is_comm[rev_mediator] && layout_is_phys_free(layout, rev_mediator) &&
                 device->qubit_is_comm[rev_target] && layout_is_phys_free(layout, rev_target) &&
                 layout_get_core_remaining_capacity(layout, rev_target_core) >= 2) {
@@ -578,7 +584,8 @@ void telesabre_collect_candidate_tele_ops(telesabre_t *ts) {
              */
 
             if (ts->config->enable_passing_core_emptying_teleport_possibility) {
-                if (layout_get_core_remaining_capacity(layout, fwd_source_core) >= 2 &&
+                if (fwd_source_core != fwd_target_core &&
+                    layout_get_core_remaining_capacity(layout, fwd_source_core) >= 2 &&
                     layout_get_core_remaining_capacity(layout, fwd_target_core) < 2 && 
                     device->qubit_is_comm[fwd_mediator] && layout_is_phys_free(layout, fwd_mediator) &&
                     device->qubit_is_comm[fwd_target] && layout_is_phys_free(layout, fwd_target)) {
@@ -596,7 +603,8 @@ void telesabre_collect_candidate_tele_ops(telesabre_t *ts) {
                     }
                 }
 
-                if (layout_get_core_remaining_capacity(layout, rev_source_core) >= 2 &&
+                if (rev_source_core != rev_target_core &&
+                    layout_get_core_remaining_capacity(layout, rev_source_core) >= 2 &&
                     layout_get_core_remaining_capacity(layout, rev_target_core) < 2 && 
                     device->qubit_is_comm[rev_mediator] && layout_is_phys_free(layout, rev_mediator) &&
                     device->qubit_is_comm[rev_target] && layout_is_phys_free(layout, rev_target)) {
@@ -1026,42 +1034,73 @@ void telesabre_step(telesabre_t* ts) {
 result_t telesabre_run(config_t* config, device_t* device, circuit_t* circuit) {
     srand(config->seed);
     clock_t start = clock();
-    telesabre_t* ts = telesabre_init(config, device, circuit);
 
-    // TeleSABRE Main Loop
-    while (ts->front_size > 0 && ts->it < config->max_iterations) {
-        telesabre_step(ts);
+    int passes = config->optimize_initial_layout ? 3 : 1;
+    result_t result;
+    layout_t *layout = NULL;
+    circuit_t *reversed_circuit = circuit_copy_reverse(circuit);
+    telesabre_t *ts = NULL;
+
+    for (int i = 0; i < passes; i++) {
+        if (i % 2 == 0) {
+            // Forward pass
+            ts = telesabre_init(config, device, circuit);
+        } else {
+            // Backward pass
+            ts = telesabre_init(config, device, reversed_circuit);
+        }
+
+        if (i > 0) {
+            // Use final layout of previous pass
+            layout_free(ts->layout);
+            ts->layout = layout_copy(layout);
+        }
+
+        // TeleSABRE Main Loop
+        while (ts->front_size > 0 && ts->it < config->max_iterations) {
+            telesabre_step(ts);
+        }
+
+        if (ts->it >= config->max_iterations) {
+            printf(H1COL"\nTeleSABRE reached maximum iterations (%d).\n" CRESET, config->max_iterations);
+        } else if (ts->front_size == 0) {
+            printf(H1COL"\nTeleSABRE completed all gates successfully.\n" CRESET);
+            ts->result.success = true;
+        }
+
+        // Final print
+        double elapsed = (double)(clock() - start) / CLOCKS_PER_SEC;
+        printf(H1COL"\nTeleSABRE completed in %.3fs.\n" CRESET, elapsed);
+        printf(H1COL"Solution has %d teledata ops, %d telegate ops and %d swaps.\n" CRESET, 
+            ts->result.num_teledata, ts->result.num_telegate, ts->result.num_swaps);
+        printf(H1COL"Safety Valve activated %d times.\n\n" CRESET, 
+            ts->result.num_deadlocks);
+
+        layout = layout_copy(ts->layout);
+
+        if (i == passes - 1 || !ts->result.success) {
+            result = ts->result;
+
+            if (config->save_report) {
+                report_save_as_json(
+                    ts->report, 
+                    ts->config,
+                    ts->device,
+                    ts->circuit,
+                    config->report_filename
+                );
+            }
+        }
+
+        telesabre_free(ts);
+
+        if (!result.success) {
+            break;
+        }
     }
 
-    if (ts->it >= config->max_iterations) {
-        printf(H1COL"\nTeleSABRE reached maximum iterations (%d).\n" CRESET, config->max_iterations);
-    } else if (ts->front_size == 0) {
-        printf(H1COL"\nTeleSABRE completed all gates successfully.\n" CRESET);
-        ts->result.success = true;
-    }
-
-    // Final print
-    double elapsed = (double)(clock() - start) / CLOCKS_PER_SEC;
-    printf(H1COL"\nTeleSABRE completed in %.3fs.\n" CRESET, elapsed);
-    printf(H1COL"Solution has %d teledata ops, %d telegate ops and %d swaps.\n" CRESET, 
-        ts->result.num_teledata, ts->result.num_telegate, ts->result.num_swaps);
-    printf(H1COL"Safety Valve activated %d times.\n\n" CRESET, 
-        ts->result.num_deadlocks);
-
-    result_t result = ts->result;
-
-    if (config->save_report) {
-        report_save_as_json(
-            ts->report, 
-            ts->config,
-            ts->device,
-            ts->circuit,
-            config->report_filename
-        );
-    }
-
-    telesabre_free(ts);
-
+    circuit_free(reversed_circuit);
+    if (layout) layout_free(layout);
     return result;
 }
 

@@ -331,6 +331,32 @@ bool gates_share_qubits(const gate_t *gate1, const gate_t *gate2)
 }
 
 
+circuit_t *circuit_copy_reverse(const circuit_t *circuit) {
+    if (!circuit) return NULL;
+
+    circuit_t *new_circuit = malloc(sizeof(circuit_t));
+    if (!new_circuit) return NULL;
+
+    *new_circuit = (circuit_t){0};
+    strncpy(new_circuit->name, circuit->name, sizeof(new_circuit->name) - 1);
+    new_circuit->name[sizeof(new_circuit->name) - 1] = '\0';
+    new_circuit->num_qubits = circuit->num_qubits;
+    new_circuit->num_gates = circuit->num_gates;
+    new_circuit->gates = malloc(sizeof(gate_t) * circuit->num_gates);
+    check_alloc(2, new_circuit->gates, new_circuit);
+
+    for (size_t i = 0; i < circuit->num_gates; i++) {
+        new_circuit->gates[i] = circuit->gates[circuit->num_gates - 1 - i];
+    }
+
+    new_circuit->json = NULL;
+    circuit_build_dependencies(new_circuit);
+    circuit_build_json(new_circuit);
+
+    return new_circuit;
+}
+
+
 void circuit_print(circuit_t* circuit)
 {
     for (size_t i = 0; i < circuit->num_gates; i++)
