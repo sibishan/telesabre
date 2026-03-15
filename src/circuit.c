@@ -15,7 +15,7 @@ circuit_t* circuit_from_qasm(const char* filename)
     printf("Loading circuit from QASM file: %s\n", filename);
 
     regex_t regex;
-    char regex_str[] = "([[:alnum:]_]*)(\\([[:alnum:]_\\./-]*\\))* ([[:alnum:]_]*)\\[([0-9]*)\\](,([[:alnum:]_]+)\\[([0-9]*)\\])*;";
+    char regex_str[] = "([[:alnum:]_]*)(\\([\\_\\.\\/[:alnum:]]*\\))*\\ ([[:alnum:]_]+)\\[([0-9]+)\\](:?[,\\ \\>\\-]+([[:alnum:]_]+)\\[([0-9]*)\\])*;";
     int ret = regcomp(&regex, regex_str, REG_EXTENDED);
     if (ret) {
         char error_buffer[100];
@@ -112,7 +112,7 @@ circuit_t* circuit_from_qasm(const char* filename)
                 qregs_sizes[num_qregs] = qubit_num;
                 num_qregs++;
                 circuit->num_qubits += qubit_num;
-            } else if (strcmp(type, "creg") && strcmp(type, "barrier") && strcmp(type, "measure")) {
+            } else if (strcmp(type, "creg") && strcmp(type, "barrier")) {
                 // Find register
                 int qubit_offset = 0;
                 for (int i = 0; i < num_qregs; i++) {
@@ -126,7 +126,7 @@ circuit_t* circuit_from_qasm(const char* filename)
                 gate.target_qubits[0] = qubit_offset + qubit_num;
                 gate.num_target_qubits = 1;
 
-                if (other_reg[0] != '\0') {
+                if (other_reg[0] != '\0' && strcmp(type, "measure") != 0) {
                     qubit_offset = 0;
                     for (int i = 0; i < num_qregs; i++) {
                         if (strcmp(qregs[i], other_reg) == 0) break;

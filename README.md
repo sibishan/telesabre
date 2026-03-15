@@ -33,3 +33,19 @@ python -m http.server --bind localhost --directory viewer
 Then visit [http://localhost:8080](http://localhost:8080).
 
 <img src="assets/viewer.gif" alt="viewer.gif" style="width:100%;" />
+
+### Citation
+
+If you find this repository useful, please cite:
+
+```bibtex
+@inproceedings{russo2025telesabre,
+  title={TeleSABRE: Heuristic Layout Synthesis in Multi-Core Quantum Systems with Teleport Interconnect},
+  author={Russo, Enrico and Vinciguerra, Elio and Palesi, Maurizio and Patti, Davide and Ascia, Giuseppe and Catania, Vincenzo},
+  booktitle={2025 IEEE International Conference on Quantum Computing and Engineering (QCE)},
+  volume={1},
+  pages={749--758},
+  year={2025},
+  organization={IEEE}
+}
+```
