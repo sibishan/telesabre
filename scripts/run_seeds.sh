@@ -39,5 +39,17 @@ for ((i = 0; i < NUM_SEEDS; i++)); do
         > /dev/null 2>&1 || echo "  (seed $seed exited non-zero)"
 done
 
-echo "Done. Results written to $OUT"
-echo "Combine into a JSON array with:  jq -s . $OUT"
+echo "Done. Per-run results written to $OUT"
+
+# Build a combined JSON report: every run plus the single best run.
+# "best" = successful run with the lowest inter_core (teledata + telegate),
+# matching how telesabre itself selects its best result.
+SUMMARY=${OUT%.jsonl}.json
+jq -s '
+    { runs: .,
+      best_run: ( map(select(.success)) | min_by(.inter_core) ) }
+' "$OUT" > "$SUMMARY"
+
+echo "Combined report (runs + best_run) written to $SUMMARY"
+echo "Best run:"
+jq '.best_run' "$SUMMARY"

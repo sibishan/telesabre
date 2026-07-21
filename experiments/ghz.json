@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 28,
+      "telegate": 0,
+      "inter_core": 28,
+      "swaps": 79,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 28,
+      "telegate": 0,
+      "inter_core": 28,
+      "swaps": 75,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 30,
+      "telegate": 0,
+      "inter_core": 30,
+      "swaps": 93,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 30,
+      "telegate": 0,
+      "inter_core": 30,
+      "swaps": 77,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 29,
+      "telegate": 0,
+      "inter_core": 29,
+      "swaps": 82,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 31,
+      "telegate": 0,
+      "inter_core": 31,
+      "swaps": 94,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 30,
+      "telegate": 0,
+      "inter_core": 30,
+      "swaps": 79,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 31,
+      "telegate": 0,
+      "inter_core": 31,
+      "swaps": 88,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 29,
+      "telegate": 0,
+      "inter_core": 29,
+      "swaps": 81,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 30,
+      "telegate": 0,
+      "inter_core": 30,
+      "swaps": 77,
+      "deadlocks": 0,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 1,
+    "depth": 0,
+    "teledata": 28,
+    "telegate": 0,
+    "inter_core": 28,
+    "swaps": 79,
+    "deadlocks": 0,
+    "success": true
+  }
+}

@@ -108,11 +108,12 @@ int main(int argc, char *argv[]) {
         } else {
             fprintf(rf,
                 "{\"seed\": %u, \"depth\": %d, \"teledata\": %d, \"telegate\": %d, "
-                "\"swaps\": %d, \"deadlocks\": %d, \"success\": %s}\n",
+                "\"inter_core\": %d, \"swaps\": %d, \"deadlocks\": %d, \"success\": %s}\n",
                 run_seed,
                 solved ? result.depth : -1,
                 solved ? result.num_teledata : -1,
                 solved ? result.num_telegate : -1,
+                solved ? (result.num_teledata + result.num_telegate) : -1,
                 solved ? result.num_swaps : -1,
                 solved ? result.num_deadlocks : -1,
                 (solved && result.success) ? "true" : "false");
