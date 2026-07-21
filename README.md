@@ -11,6 +11,16 @@ Run:
 ./telesabre configs/default.json devices/<device>.json circuits/<circuit>.qasm
 ```
 
+#### Running an experiment over multiple seeds
+
+To run the same device + circuit over many random seeds and collect only the
+summary results, use `scripts/run_experiment.sh`:
+
+```sh
+scripts/run_experiment.sh <config.json> <device.json> <circuit.qasm> <num_seeds> [start_seed] [out.jsonl]
+```
+
+
 ### Python implementation usage
 
 Run:
