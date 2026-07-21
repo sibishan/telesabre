@@ -64,6 +64,7 @@ typedef struct config {
 
 
 #define TS_CONFIG_INT_ENTRIES \
+    X(seed) \
     X(usage_penalties_reset_interval) \
     X(teleport_bonus) \
     X(telegate_bonus) \

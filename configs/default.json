@@ -1,7 +1,7 @@
 {
     "config": {
         "name": "default",
-        "seed": 42,
+        "seed": 1,
         "energy_type": "extended-set",
         "usage_penalties_reset_interval": 5,
         "optimize_initial": true,
