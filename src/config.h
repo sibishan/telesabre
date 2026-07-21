@@ -51,6 +51,7 @@ typedef struct config {
 
     bool save_report;
     char report_filename[256];
+    char results_filename[256];
 
     bool enable_passing_core_emptying_teleport_possibility;
 
@@ -94,7 +95,8 @@ typedef struct config {
 
 #define TS_CONFIG_STRING_ENTRIES \
     X(name) \
-    X(report_filename)
+    X(report_filename) \
+    X(results_filename)
 
 
 config_t *config_new();
