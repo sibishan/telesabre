@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 345,
+      "telegate": 35,
+      "inter_core": 380,
+      "swaps": 1899,
+      "deadlocks": 4,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 290,
+      "telegate": 170,
+      "inter_core": 460,
+      "swaps": 1786,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 266,
+      "telegate": 14,
+      "inter_core": 280,
+      "swaps": 1724,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 333,
+      "telegate": 71,
+      "inter_core": 404,
+      "swaps": 1775,
+      "deadlocks": 6,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 330,
+      "telegate": 8,
+      "inter_core": 338,
+      "swaps": 1706,
+      "deadlocks": 2,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 294,
+      "telegate": 10,
+      "inter_core": 304,
+      "swaps": 1766,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 264,
+      "telegate": 12,
+      "inter_core": 276,
+      "swaps": 1683,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 396,
+      "telegate": 22,
+      "inter_core": 418,
+      "swaps": 1983,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 302,
+      "telegate": 4,
+      "inter_core": 306,
+      "swaps": 1743,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 334,
+      "telegate": 6,
+      "inter_core": 340,
+      "swaps": 1718,
+      "deadlocks": 2,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 7,
+    "depth": 0,
+    "teledata": 264,
+    "telegate": 12,
+    "inter_core": 276,
+    "swaps": 1683,
+    "deadlocks": 0,
+    "success": true
+  }
+}

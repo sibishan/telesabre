@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 749,
+      "telegate": 22,
+      "inter_core": 771,
+      "swaps": 6068,
+      "deadlocks": 2,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 856,
+      "telegate": 74,
+      "inter_core": 930,
+      "swaps": 6464,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 726,
+      "telegate": 20,
+      "inter_core": 746,
+      "swaps": 6179,
+      "deadlocks": 2,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 719,
+      "telegate": 18,
+      "inter_core": 737,
+      "swaps": 5884,
+      "deadlocks": 4,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 725,
+      "telegate": 14,
+      "inter_core": 739,
+      "swaps": 6009,
+      "deadlocks": 4,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 1089,
+      "telegate": 14,
+      "inter_core": 1103,
+      "swaps": 6808,
+      "deadlocks": 4,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 774,
+      "telegate": 10,
+      "inter_core": 784,
+      "swaps": 6129,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 806,
+      "telegate": 32,
+      "inter_core": 838,
+      "swaps": 6192,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 921,
+      "telegate": 16,
+      "inter_core": 937,
+      "swaps": 6670,
+      "deadlocks": 4,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 1135,
+      "telegate": 24,
+      "inter_core": 1159,
+      "swaps": 6816,
+      "deadlocks": 4,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 4,
+    "depth": 0,
+    "teledata": 719,
+    "telegate": 18,
+    "inter_core": 737,
+    "swaps": 5884,
+    "deadlocks": 4,
+    "success": true
+  }
+}
