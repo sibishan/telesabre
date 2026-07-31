@@ -1036,24 +1036,27 @@ result_t telesabre_run(config_t* config, device_t* device, circuit_t* circuit) {
     clock_t start = clock();
 
     int passes = config->optimize_initial_layout ? 3 : 1;
-    result_t result;
+    // Only the last pass produces the reported result; keep it failed until then
+    // so an early break can never propagate an uninitialized struct.
+    result_t result = (result_t){0};
     layout_t *layout = NULL;
     circuit_t *reversed_circuit = circuit_copy_reverse(circuit);
     telesabre_t *ts = NULL;
 
     for (int i = 0; i < passes; i++) {
-        if (i % 2 == 0) {
-            // Forward pass
-            ts = telesabre_init(config, device, circuit);
-        } else {
-            // Backward pass
-            ts = telesabre_init(config, device, reversed_circuit);
-        }
+        // Even passes route the circuit forward, odd passes route it reversed.
+        // Only the final (forward) pass is kept as the solution: the earlier
+        // ones exist to refine the initial layout it starts from.
+        ts = telesabre_init(config, device, (i % 2 == 0) ? circuit : reversed_circuit);
 
         if (i > 0) {
             // Use final layout of previous pass
             layout_free(ts->layout);
             ts->layout = layout_copy(layout);
+            // The safety valve rolls back to last_progress_layout, which
+            // telesabre_init snapshotted from the layout we just discarded.
+            layout_free(ts->last_progress_layout);
+            ts->last_progress_layout = layout_copy(ts->layout);
         }
 
         // TeleSABRE Main Loop
@@ -1076,6 +1079,7 @@ result_t telesabre_run(config_t* config, device_t* device, circuit_t* circuit) {
         printf(H1COL"Safety Valve activated %d times.\n\n" CRESET, 
             ts->result.num_deadlocks);
 
+        if (layout) layout_free(layout);
         layout = layout_copy(ts->layout);
 
         if (i == passes - 1 || !ts->result.success) {
@@ -1092,9 +1096,13 @@ result_t telesabre_run(config_t* config, device_t* device, circuit_t* circuit) {
             }
         }
 
+        bool pass_succeeded = ts->result.success;
+
         telesabre_free(ts);
 
-        if (!result.success) {
+        // A failed pass is reported as-is; there is no point refining a layout
+        // that did not route the circuit.
+        if (!pass_succeeded) {
             break;
         }
     }

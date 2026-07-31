@@ -324,10 +324,10 @@ layout_t *initial_layout_hungarian(device_t *device, circuit_t *circuit, config_
 
     // Assign as many interacting qubits as possible to the same core
     for (size_t g = 0; g < front_size; g++) {
+        gate_t *gate = &circuit->gates[front_gates[g]];
+        if (gate->num_target_qubits < 2) continue;
         for (core_t c = 0; c < device->num_cores; c++) {
             if (core_capacities[c] > config->init_layout_hun_min_free_gate) {
-                gate_t *gate = &circuit->gates[front_gates[g]];
-                if (gate->num_target_qubits < 2) continue;
                 vqubit_t virt1 = gate->target_qubits[0];
                 vqubit_t virt2 = gate->target_qubits[1];
                 virt_to_core[virt1] = c;
@@ -347,6 +347,24 @@ layout_t *initial_layout_hungarian(device_t *device, circuit_t *circuit, config_
                     break;
                 }
             }
+        }
+        // The min-free thresholds reserve slack for mediators; if they leave a
+        // qubit homeless, fall back to any core with room rather than indexing
+        // core_to_virt[-1] further down.
+        if (virt_to_core[q] == -1) {
+            for (core_t c = 0; c < device->num_cores; c++) {
+                if (core_capacities[c] > 0) {
+                    virt_to_core[q] = c;
+                    core_capacities[c] -= 1;
+                    break;
+                }
+            }
+        }
+        if (virt_to_core[q] == -1) {
+            fprintf(stderr,
+                "Initial layout: circuit needs %zu qubits but the device cores cannot hold them.\n",
+                circuit->num_qubits);
+            exit(1);
         }
     }
     // Now assign vqubit to specific pqubit. Create list of qubits in each core.

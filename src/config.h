@@ -25,7 +25,6 @@ typedef struct config {
     enum energy_type energy_type;
 
     float usage_penalties_reset_interval;
-    bool optimize_initial;
     enum initial_layout_type initial_layout_type;
 
     int teleport_bonus;
@@ -88,7 +87,6 @@ typedef struct config {
     X(extended_set_factor)
 
 #define TS_CONFIG_BOOL_ENTRIES \
-    X(optimize_initial) \
     X(save_report) \
     X(enable_passing_core_emptying_teleport_possibility) \
     X(optimize_initial_layout)

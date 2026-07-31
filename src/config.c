@@ -17,8 +17,7 @@ config_t* config_new() {
     config->energy_type = ENERGY_TYPE_EXTENDED_SET;
     config->usage_penalties_reset_interval = 5;
 
-    config->optimize_initial = false;
-    config->initial_layout_type = INITIAL_LAYOUT_ROUND_ROBIN;
+    config->initial_layout_type = INITIAL_LAYOUT_HUNGARIAN;
 
     config->teleport_bonus = 100;
     config->telegate_bonus = 100;
@@ -51,7 +50,7 @@ config_t* config_new() {
     config->max_attempts = 10;
     config->required_successes = 1;
 
-    config->optimize_initial_layout = false;
+    config->optimize_initial_layout = true;
 
     config->json = NULL;
     return config;
@@ -127,6 +126,8 @@ void config_set_initial_layout_type(config_t *config, const char *value) {
         config->initial_layout_type = INITIAL_LAYOUT_HUNGARIAN;
     } else if (strcmp(value, "round-robin") == 0) {
         config->initial_layout_type = INITIAL_LAYOUT_ROUND_ROBIN;
+    } else if (strcmp(value, "random") == 0) {
+        config->initial_layout_type = INITIAL_LAYOUT_RANDOM;
     } else {
         fprintf(stderr, "Unknown initial layout type: %s\n", value);
         exit(1);
