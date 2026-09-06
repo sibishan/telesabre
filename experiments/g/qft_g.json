@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 79,
+      "telegate": 0,
+      "inter_core": 79,
+      "swaps": 511,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 57,
+      "telegate": 0,
+      "inter_core": 57,
+      "swaps": 453,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 72,
+      "telegate": 0,
+      "inter_core": 72,
+      "swaps": 460,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 61,
+      "telegate": 0,
+      "inter_core": 61,
+      "swaps": 410,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 75,
+      "telegate": 0,
+      "inter_core": 75,
+      "swaps": 522,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 76,
+      "telegate": 0,
+      "inter_core": 76,
+      "swaps": 480,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 46,
+      "telegate": 0,
+      "inter_core": 46,
+      "swaps": 418,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 74,
+      "telegate": 0,
+      "inter_core": 74,
+      "swaps": 498,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 89,
+      "telegate": 0,
+      "inter_core": 89,
+      "swaps": 499,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 61,
+      "telegate": 0,
+      "inter_core": 61,
+      "swaps": 436,
+      "deadlocks": 0,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 7,
+    "depth": 0,
+    "teledata": 46,
+    "telegate": 0,
+    "inter_core": 46,
+    "swaps": 418,
+    "deadlocks": 0,
+    "success": true
+  }
+}

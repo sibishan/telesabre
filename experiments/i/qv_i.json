@@ -1,0 +1,15 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": -1,
+      "teledata": -1,
+      "telegate": -1,
+      "inter_core": -1,
+      "swaps": -1,
+      "deadlocks": -1,
+      "success": false
+    }
+  ],
+  "best_run": null
+}

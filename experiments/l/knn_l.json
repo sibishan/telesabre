@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 8,
+      "telegate": 0,
+      "inter_core": 8,
+      "swaps": 1095,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 8,
+      "telegate": 0,
+      "inter_core": 8,
+      "swaps": 1092,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 10,
+      "telegate": 0,
+      "inter_core": 10,
+      "swaps": 1082,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 16,
+      "telegate": 0,
+      "inter_core": 16,
+      "swaps": 1113,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 6,
+      "telegate": 0,
+      "inter_core": 6,
+      "swaps": 1099,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 12,
+      "telegate": 0,
+      "inter_core": 12,
+      "swaps": 1143,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 6,
+      "telegate": 0,
+      "inter_core": 6,
+      "swaps": 1081,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 6,
+      "telegate": 0,
+      "inter_core": 6,
+      "swaps": 1021,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 14,
+      "telegate": 0,
+      "inter_core": 14,
+      "swaps": 1033,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 14,
+      "telegate": 0,
+      "inter_core": 14,
+      "swaps": 1088,
+      "deadlocks": 0,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 5,
+    "depth": 0,
+    "teledata": 6,
+    "telegate": 0,
+    "inter_core": 6,
+    "swaps": 1099,
+    "deadlocks": 0,
+    "success": true
+  }
+}

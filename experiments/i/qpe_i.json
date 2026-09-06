@@ -1,0 +1,104 @@
+{
+  "runs": [
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 317,
+      "telegate": 0,
+      "inter_core": 317,
+      "swaps": 3177,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 227,
+      "telegate": 52,
+      "inter_core": 279,
+      "swaps": 3061,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 234,
+      "telegate": 54,
+      "inter_core": 288,
+      "swaps": 3102,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 259,
+      "telegate": 2,
+      "inter_core": 261,
+      "swaps": 3383,
+      "deadlocks": 4,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 366,
+      "telegate": 4,
+      "inter_core": 370,
+      "swaps": 4240,
+      "deadlocks": 2,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 224,
+      "telegate": 0,
+      "inter_core": 224,
+      "swaps": 2862,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 253,
+      "telegate": 0,
+      "inter_core": 253,
+      "swaps": 3185,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 240,
+      "telegate": 0,
+      "inter_core": 240,
+      "swaps": 3319,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": -1,
+      "teledata": -1,
+      "telegate": -1,
+      "inter_core": -1,
+      "swaps": -1,
+      "deadlocks": -1,
+      "success": false
+    }
+  ],
+  "best_run": {
+    "seed": 7,
+    "depth": 0,
+    "teledata": 224,
+    "telegate": 0,
+    "inter_core": 224,
+    "swaps": 2862,
+    "deadlocks": 0,
+    "success": true
+  }
+}

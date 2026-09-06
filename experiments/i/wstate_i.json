@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 17,
+      "telegate": 0,
+      "inter_core": 17,
+      "swaps": 243,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 16,
+      "telegate": 0,
+      "inter_core": 16,
+      "swaps": 192,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 8,
+      "telegate": 0,
+      "inter_core": 8,
+      "swaps": 118,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 13,
+      "telegate": 0,
+      "inter_core": 13,
+      "swaps": 132,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 7,
+      "telegate": 0,
+      "inter_core": 7,
+      "swaps": 121,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 16,
+      "telegate": 0,
+      "inter_core": 16,
+      "swaps": 219,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 18,
+      "telegate": 0,
+      "inter_core": 18,
+      "swaps": 262,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 12,
+      "telegate": 0,
+      "inter_core": 12,
+      "swaps": 156,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 10,
+      "telegate": 0,
+      "inter_core": 10,
+      "swaps": 160,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 13,
+      "telegate": 0,
+      "inter_core": 13,
+      "swaps": 162,
+      "deadlocks": 0,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 5,
+    "depth": 0,
+    "teledata": 7,
+    "telegate": 0,
+    "inter_core": 7,
+    "swaps": 121,
+    "deadlocks": 0,
+    "success": true
+  }
+}

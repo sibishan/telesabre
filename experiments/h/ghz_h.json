@@ -1,0 +1,114 @@
+{
+  "runs": [
+    {
+      "seed": 1,
+      "depth": 0,
+      "teledata": 5,
+      "telegate": 0,
+      "inter_core": 5,
+      "swaps": 74,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 2,
+      "depth": 0,
+      "teledata": 5,
+      "telegate": 0,
+      "inter_core": 5,
+      "swaps": 63,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 3,
+      "depth": 0,
+      "teledata": 6,
+      "telegate": 0,
+      "inter_core": 6,
+      "swaps": 91,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 4,
+      "depth": 0,
+      "teledata": 4,
+      "telegate": 0,
+      "inter_core": 4,
+      "swaps": 81,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 5,
+      "depth": 0,
+      "teledata": 5,
+      "telegate": 0,
+      "inter_core": 5,
+      "swaps": 82,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 6,
+      "depth": 0,
+      "teledata": 5,
+      "telegate": 0,
+      "inter_core": 5,
+      "swaps": 55,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 7,
+      "depth": 0,
+      "teledata": 8,
+      "telegate": 0,
+      "inter_core": 8,
+      "swaps": 78,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 8,
+      "depth": 0,
+      "teledata": 6,
+      "telegate": 0,
+      "inter_core": 6,
+      "swaps": 84,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 9,
+      "depth": 0,
+      "teledata": 5,
+      "telegate": 0,
+      "inter_core": 5,
+      "swaps": 61,
+      "deadlocks": 0,
+      "success": true
+    },
+    {
+      "seed": 10,
+      "depth": 0,
+      "teledata": 5,
+      "telegate": 0,
+      "inter_core": 5,
+      "swaps": 69,
+      "deadlocks": 0,
+      "success": true
+    }
+  ],
+  "best_run": {
+    "seed": 4,
+    "depth": 0,
+    "teledata": 4,
+    "telegate": 0,
+    "inter_core": 4,
+    "swaps": 81,
+    "deadlocks": 0,
+    "success": true
+  }
+}
