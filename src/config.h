@@ -25,6 +25,7 @@ typedef struct config {
     enum energy_type energy_type;
 
     float usage_penalties_reset_interval;
+    bool optimize_initial;
     enum initial_layout_type initial_layout_type;
 
     int teleport_bonus;
@@ -50,7 +51,6 @@ typedef struct config {
 
     bool save_report;
     char report_filename[256];
-    char results_filename[256];
 
     bool enable_passing_core_emptying_teleport_possibility;
 
@@ -64,7 +64,6 @@ typedef struct config {
 
 
 #define TS_CONFIG_INT_ENTRIES \
-    X(seed) \
     X(usage_penalties_reset_interval) \
     X(teleport_bonus) \
     X(telegate_bonus) \
@@ -87,14 +86,14 @@ typedef struct config {
     X(extended_set_factor)
 
 #define TS_CONFIG_BOOL_ENTRIES \
+    X(optimize_initial) \
     X(save_report) \
     X(enable_passing_core_emptying_teleport_possibility) \
     X(optimize_initial_layout)
 
 #define TS_CONFIG_STRING_ENTRIES \
     X(name) \
-    X(report_filename) \
-    X(results_filename)
+    X(report_filename)
 
 
 config_t *config_new();
