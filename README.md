@@ -19,18 +19,6 @@ To run the same device + circuit over many random seeds and collect only the sum
 scripts/run_experiment.sh <config.json> <device.json> <circuit.qasm> <num_seeds> [start_seed] [out.jsonl]
 ```
 
-Example:
-```sh
-scripts/run_experiment.sh configs/default.json devices/G.json \
-    circuits/qasm_25/qft_nativegates_ibm_qiskit_opt3_25.qasm 20
-```
-
-- `start_seed` defaults to `0`, `out.jsonl` defaults to `results.jsonl`.
-- For each seed, a temporary copy of the config is made with only `seed` changed; the original config is not modified.
-- `out.jsonl` gets one line per seed with `seed`, `effective_seed`, `failed_attempts`, `success`, `depth`, `teledata`, `telegate`, `inter_core` (teledata + telegate), `swaps` and `deadlocks`.
-- `out.json` (same name, `.json` extension) contains all `runs` plus `best_run`: the successful run with the lowest `inter_core`.
-- If a run fails, telesabre retries internally with the next seed (up to `max_attempts`), so `effective_seed` is the seed that actually produced the result.
-
 ### Python implementation usage
 
 Run:
