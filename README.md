@@ -11,12 +11,42 @@ Run:
 ./telesabre configs/default.json devices/<device>.json circuits/<circuit>.qasm
 ```
 
-### Running an experiment over multiple seeds
+### Running the experiments
 
-To run the same device + circuit over many random seeds and collect only the summary results, use `scripts/run_experiment.sh` (requires `jq`):
+`experiments/run_experiment.sh` runs telesabre on every circuit batch, for a range of seeds, on both the base devices (A–F) and the alt devices (A_alt–F_alt). It needs `jq` and `perl`, which both come with macOS. Compile `./telesabre` first, then run:
 
 ```sh
-scripts/run_experiment.sh <config.json> <device.json> <circuit.qasm> <num_seeds> [start_seed] [out.jsonl]
+experiments/run_experiment.sh
+```
+
+The script works from any directory. Each circuit batch runs on one device pair:
+
+| Circuits | Base device | Alt device |
+|---|---|---|
+| `circuits/qasm_25` | A | A_alt |
+| `circuits/qasm_64` | B | B_alt |
+| `circuits/qasm_80` | C | C_alt |
+| `circuits/qasm_95` | D | D_alt |
+| `circuits/qasm_200` | E | E_alt |
+| `circuits/qasm_360` | F | F_alt |
+
+Results are written to:
+
+- `experiments/telesabre_results.json`: base devices A–F
+- `experiments/telesabre_results_alt.json`: alt devices A_alt–F_alt
+
+For each circuit, the file records every seed's run (teledata, telegate, inter-core = teledata + telegate, swaps, depth, deadlocks, success, runtime) plus the `best` run. The best run is the successful run with the lowest inter-core count, with ties broken by fewest swaps. Depth is currently always 0 because the C implementation doesn't compute it.
+
+By default it runs 10 seeds starting at 0 with `configs/default.json`. All arguments are optional:
+
+```sh
+experiments/run_experiment.sh [config.json] [num_seeds] [start_seed] [out_dir]
+```
+
+To run only some batches, for example for a quick test:
+
+```sh
+ONLY_BATCHES="qasm_25 qasm_64" experiments/run_experiment.sh
 ```
 
 ### Python implementation usage
