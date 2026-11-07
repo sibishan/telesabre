@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 #
-# Run telesabre over every circuit batch, on both the base (A-F) and the alt
-# (A_alt-F_alt) devices, for a range of seeds, and collect the summary results
-# (depth, teledata, telegate, swaps, deadlocks, success, runtime) into:
+# Compare the "circuits" and "circuits_alt" circuit sets on the base (A-F)
+# devices. Every circuit batch of both sets (read from experiments/data/in/) is
+# run for a range of seeds, and the summary results (depth, teledata, telegate,
+# swaps, deadlocks, success, runtime) are collected into:
 #
-#   <out_dir>/telesabre_results.json      (A, B, C, D, E, F)
-#   <out_dir>/telesabre_results_alt.json  (A_alt ... F_alt)
+#   <out_dir>/telesabre_results.json       (circuits     on A-F)
+#   <out_dir>/telesabre_results_alt.json   (circuits_alt on A-F)
 #
 # Only the "seed" value of the config is changed between runs: for each seed a
 # temporary copy of the config is written with just .config.seed replaced, so
@@ -20,9 +21,9 @@
 # inter_core (teledata + telegate), ties broken by fewest swaps.
 #
 # Usage:
-#   scripts/run_experiment.sh [config.json] [num_seeds] [start_seed] [out_dir]
+#   experiments/run_experiment.sh [config.json] [num_seeds] [start_seed] [out_dir]
 #
-# Defaults: configs/default.json, 10 seeds, start seed 0, out dir experiments/
+# Defaults: configs/default.json, 5 seeds, start seed 0, out dir experiments/data/out
 #
 # Optional: ONLY_BATCHES="qasm_25 qasm_64" restricts the run to those batches.
 #
@@ -34,20 +35,33 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 CONFIG=${1:-configs/default.json}
-NUM_SEEDS=${2:-10}
+NUM_SEEDS=${2:-5}
 START_SEED=${3:-0}
-OUT_DIR=${4:-experiments}
+OUT_DIR=${4:-experiments/data/out}
 
 BIN=./telesabre
+IN_DIR=experiments/data/in
 
-# "label  qasm_dir  base_device  alt_device"
+# Circuit sets to compare (subdirectories of $IN_DIR). The first is the baseline.
+CIRCUIT_SETS=(circuits circuits_alt)
+
+# Output file name for a circuit set: telesabre_results<suffix>.json
+out_suffix() { # out_suffix <set_name>
+    case $1 in
+        circuits)  echo "" ;;
+        circuits_*) echo "_${1#circuits_}" ;;
+        *)         echo "_$1" ;;
+    esac
+}
+
+# "label  device" -- each label is a qasm_* subdirectory of every circuit set.
 BATCHES=(
-    "qasm_25  circuits/qasm_25  devices/A.json devices/A_alt.json"
-    "qasm_64  circuits/qasm_64  devices/B.json devices/B_alt.json"
-    "qasm_80  circuits/qasm_80  devices/C.json devices/C_alt.json"
-    "qasm_95  circuits/qasm_95  devices/D.json devices/D_alt.json"
-    "qasm_200 circuits/qasm_200 devices/E.json devices/E_alt.json"
-    "qasm_360 circuits/qasm_360 devices/F.json devices/F_alt.json"
+    "qasm_25  devices/A.json"
+    "qasm_64  devices/B.json"
+    "qasm_80  devices/C.json"
+    "qasm_95  devices/D.json"
+    "qasm_200 devices/E.json"
+    "qasm_360 devices/F.json"
 )
 if [[ -n "${ONLY_BATCHES:-}" ]]; then
     kept=()
@@ -61,15 +75,11 @@ if [[ -n "${ONLY_BATCHES:-}" ]]; then
     BATCHES=("${kept[@]}")
 fi
 
-# "variant name  column of the device in each BATCHES entry"
-# Output file is telesabre_results.json for "base", telesabre_results_<name>.json otherwise.
-VARIANTS=(
-    "base 3"
-    "alt  4"
-)
-
 [[ -x "$BIN" ]] || { echo "Error: $BIN not found; compile it first (see README)." >&2; exit 1; }
 [[ -f "$CONFIG" ]] || { echo "Error: config $CONFIG not found." >&2; exit 1; }
+for set_name in "${CIRCUIT_SETS[@]}"; do
+    [[ -d "$IN_DIR/$set_name" ]] || { echo "Error: $IN_DIR/$set_name not found." >&2; exit 1; }
+done
 mkdir -p "$OUT_DIR"
 
 TMPDIR_RUN=$(mktemp -d)
@@ -193,39 +203,39 @@ run_file() { # run_file <device> <circuit> <progress>
 
 shopt -s nullglob
 
-# Count files for the overall progress bar.
-files_per_pass=0
-for entry in "${BATCHES[@]}"; do
-    read -r _ qasm_dir _ _ <<< "$entry"
-    files=("$qasm_dir"/*.qasm)
-    files_per_pass=$((files_per_pass + ${#files[@]}))
+# Count files over all sets for the overall progress bar.
+total=0
+for set_name in "${CIRCUIT_SETS[@]}"; do
+    for entry in "${BATCHES[@]}"; do
+        read -r label _ <<< "$entry"
+        files=("$IN_DIR/$set_name/$label"/*.qasm)
+        total=$((total + ${#files[@]}))
+    done
 done
-total=$((files_per_pass * ${#VARIANTS[@]}))
 done_count=0
 pass_no=0
 
-for variant in "${VARIANTS[@]}"; do
-    read -r variant_name col <<< "$variant"
-    if [[ "$variant_name" == base ]]; then suffix=""; else suffix="_$variant_name"; fi
+for set_name in "${CIRCUIT_SETS[@]}"; do
     pass_no=$((pass_no + 1))
-    echo "===== Pass $pass_no/${#VARIANTS[@]}: telesabre_results$suffix ====="
+    suffix=$(out_suffix "$set_name")
+    echo "===== Pass $pass_no/${#CIRCUIT_SETS[@]}: telesabre_results$suffix ($set_name on A-F) ====="
     echo
 
-    batches_file="$TMPDIR_RUN/batches$suffix.jsonl"
+    batches_file="$TMPDIR_RUN/batches_$set_name.jsonl"
     : > "$batches_file"
 
     for entry in "${BATCHES[@]}"; do
-        read -r label qasm_dir dev_base dev_alt <<< "$entry"
-        if [[ "$col" == 3 ]]; then device=$dev_base; else device=$dev_alt; fi
+        read -r label device <<< "$entry"
+        qasm_dir="$IN_DIR/$set_name/$label"
         files=("$qasm_dir"/*.qasm)
-        echo "[$label] $(basename "$device" .json): ${#files[@]} qasm files in $qasm_dir"
+        echo "[$set_name/$label] $(basename "$device" .json): ${#files[@]} qasm files in $qasm_dir"
         echo
 
         results_file="$TMPDIR_RUN/results.jsonl"
         : > "$results_file"
         for circuit in "${files[@]}"; do
             done_count=$((done_count + 1))
-            progress="P$pass_no/${#VARIANTS[@]} overall $(bar "$done_count" "$total") |"
+            progress="overall $(bar "$done_count" "$total") |"
             result=$(run_file "$device" "$circuit" "$progress")
             echo "$result" >> "$results_file"
 
@@ -249,7 +259,7 @@ for variant in "${VARIANTS[@]}"; do
     out_path="$OUT_DIR/telesabre_results$suffix.json"
     jq -s \
         --arg generated_at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
-        --arg variant "$variant_name" \
+        --arg variant "$set_name" \
         --arg config_path "$CONFIG" \
         --argjson num_seeds "$NUM_SEEDS" --argjson start_seed "$START_SEED" \
         --slurpfile config "$CONFIG" '

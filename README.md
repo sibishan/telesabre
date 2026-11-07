@@ -1,3 +1,87 @@
+# Running the experiment for BOLTSABRE
+
+The experiment in `experiments/` routes two sets of circuits on devices A–F:
+
+- **Original circuits** (`experiments/data/in/circuits/`): each circuit declares only the qubits it uses.
+- **Padded circuits** (`experiments/data/in/circuits_alt/`): the same circuits with extra idle qubits declared,
+  so the router has as many qubits to work with as BOLTSABRE. The gates, and so the CX counts, are identical.
+
+Both sets have the same six groups, each routed on one device:
+
+| Group | Device | Cores |
+|---|---|---|
+| `qasm_25` | A | four 4×4 cores, ring |
+| `qasm_64` | B | four 5×5 cores, ring |
+| `qasm_80` | C | four 6×5 cores, ring |
+| `qasm_95` | D | six 5×5 cores, 2×3 core grid |
+| `qasm_200` | E | eight 7×5 cores, 2×4 core grid |
+| `qasm_360` | F | twelve 7×6 cores, 3×4 core grid |
+
+The devices are defined in `devices/A.json` to `devices/F.json`.
+
+The script needs `jq` and `perl`, which both come with macOS. Compile `./telesabre` first
+(see [C implementation usage](#c-implementation-usage)), then run it from any directory:
+
+```bash
+gcc -O3 -flto -I src src/*.c -o ./telesabre
+experiments/run.sh
+```
+
+It runs the original circuits first, then the padded circuits, and writes one file for each
+to `experiments/data/out/`:
+
+- `telesabre_results.json`: original circuits
+- `telesabre_results_alt.json`: padded circuits
+
+For each circuit the file lists every seed's run (teledata, telegate, EPR = teledata + telegate, SWAP count,
+deadlocks, success and runtime), plus the best seed: the successful run with the fewest EPR, then the fewest SWAPs.
+Telesabre retries a failed run internally with the next seed, so `seed` is the seed a run started from and
+`effective_seed` is the seed that produced the result.
+
+To change what runs, pass arguments or set `ONLY_BATCHES`:
+
+```bash
+experiments/run.sh [config.json] [num_seeds] [start_seed] [out_dir]
+ONLY_BATCHES="qasm_25 qasm_64" experiments/run.sh
+```
+
+- `config.json`: the TeleSABRE config (default `configs/default.json`). Only its `seed` is changed between runs
+- `num_seeds`: how many seeds to try per circuit (default `5`)
+- `start_seed`: the first seed (default `0`)
+- `out_dir`: where the result files go (default `experiments/data/out`)
+- `ONLY_BATCHES`: which circuit groups run (default all six)
+
+### Results and analysis
+
+`experiments/data/out/` holds the two result files, one per circuit set:
+
+- `telesabre_results.json`: original circuits
+- `telesabre_results_alt.json`: padded circuits
+
+`experiments/data/out/analysis.ipynb` compares them in one table, in the layout of the paper's Table III:
+the effect of padding on TeleSABRE (I). The table reports EPR and SWAP counts per circuit, with geometric means per
+group and over the whole suite. A circuit with no successful run in any of its seeds is shown as FAILED, and the
+geometric means only cover circuits that succeeded in both sets. The notebook needs `pandas`, `numpy` and Jupyter
+(`pip install pandas numpy jupyter`).
+
+### Patch Note: seeding fix
+
+Originally, the `seed` value in the config JSON was ignored. `config_t` has a `seed` field, and `srand(config->seed)` in `src/telesabre.c` uses it. But `seed` wasn't listed in `TS_CONFIG_INT_ENTRIES` in `src/config.h`, the X-macro list that `src/config.c` uses to read integer fields from the JSON (and to handle `config_set_parameter`). So every run started from the hard-coded default `seed = 42` in `config_new()`, whatever the config said. Running with different seeds gave identical results.
+
+The fix adds `seed` to that list (commit `e85c532`):
+
+```diff
+ #define TS_CONFIG_INT_ENTRIES \
++    X(seed) \
+     X(usage_penalties_reset_interval) \
+     X(teleport_bonus) \
+     X(telegate_bonus) \
+```
+
+With this, `.config.seed` in the JSON is respected, which `experiments/run.sh` relies on to vary the seed between runs. Recompile `./telesabre` after pulling this change.
+
+---
+
 # TeleSABRE
 
 ### C Implementation Usage
@@ -9,44 +93,6 @@ gcc -O3 -flto -I src src/*.c -o ./telesabre
 Run:
 ```sh
 ./telesabre configs/default.json devices/<device>.json circuits/<circuit>.qasm
-```
-
-### Running the experiments
-
-`experiments/run_experiment.sh` runs telesabre on every circuit batch, for a range of seeds, on both the base devices (A–F) and the alt devices (A_alt–F_alt). It needs `jq` and `perl`, which both come with macOS. Compile `./telesabre` first, then run:
-
-```sh
-experiments/run_experiment.sh
-```
-
-The script works from any directory. Each circuit batch runs on one device pair:
-
-| Circuits | Base device | Alt device |
-|---|---|---|
-| `circuits/qasm_25` | A | A_alt |
-| `circuits/qasm_64` | B | B_alt |
-| `circuits/qasm_80` | C | C_alt |
-| `circuits/qasm_95` | D | D_alt |
-| `circuits/qasm_200` | E | E_alt |
-| `circuits/qasm_360` | F | F_alt |
-
-Results are written to:
-
-- `experiments/telesabre_results.json`: base devices A–F
-- `experiments/telesabre_results_alt.json`: alt devices A_alt–F_alt
-
-For each circuit, the file records every seed's run (teledata, telegate, inter-core = teledata + telegate, swaps, depth, deadlocks, success, runtime) plus the `best` run. The best run is the successful run with the lowest inter-core count, with ties broken by fewest swaps. Depth is currently always 0 because the C implementation doesn't compute it.
-
-By default it runs 10 seeds starting at 0 with `configs/default.json`. All arguments are optional:
-
-```sh
-experiments/run_experiment.sh [config.json] [num_seeds] [start_seed] [out_dir]
-```
-
-To run only some batches, for example for a quick test:
-
-```sh
-ONLY_BATCHES="qasm_25 qasm_64" experiments/run_experiment.sh
 ```
 
 ### Python implementation usage

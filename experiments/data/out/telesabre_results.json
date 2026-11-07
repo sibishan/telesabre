@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-05T00:02:11Z",
-  "variant": "base",
+  "generated_at": "2026-11-06T16:16:11Z",
+  "variant": "circuits",
   "config_path": "configs/default.json",
   "config": {
     "name": "default",
@@ -30,21 +30,21 @@
     "required_successes": 1,
     "max_attempts": 100
   },
-  "num_seeds": 3,
-  "start_seed": 1,
+  "num_seeds": 5,
+  "start_seed": 0,
   "batches": [
     {
       "batch": "qasm_25",
-      "qasm_dir": "circuits/qasm_25",
+      "qasm_dir": "experiments/data/in/circuits/qasm_25",
       "arch": "A",
       "device": "devices/A.json",
       "results": [
         {
           "file": "ae_nativegates_ibm_qiskit_opt3_25.qasm",
-          "path": "circuits/qasm_25/ae_nativegates_ibm_qiskit_opt3_25.qasm",
+          "path": "experiments/data/in/circuits/qasm_25/ae_nativegates_ibm_qiskit_opt3_25.qasm",
           "arch": "A",
           "device": "devices/A.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 3,
           "best": {
             "seed": 3,
@@ -56,11 +56,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.086599
+            "runtime_s": 0.108782
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 28,
+              "telegate": 0,
+              "inter_core": 28,
+              "swaps": 342,
+              "deadlocks": 0,
+              "runtime_s": 0.103350
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -73,7 +87,7 @@
               "inter_core": 28,
               "swaps": 357,
               "deadlocks": 0,
-              "runtime_s": 0.096303
+              "runtime_s": 0.098026
             },
             {
               "seed": 2,
@@ -87,7 +101,7 @@
               "inter_core": 30,
               "swaps": 315,
               "deadlocks": 0,
-              "runtime_s": 0.109916
+              "runtime_s": 0.083590
             },
             {
               "seed": 3,
@@ -101,32 +115,60 @@
               "inter_core": 24,
               "swaps": 325,
               "deadlocks": 0,
-              "runtime_s": 0.086599
+              "runtime_s": 0.108782
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 27,
+              "telegate": 0,
+              "inter_core": 27,
+              "swaps": 336,
+              "deadlocks": 0,
+              "runtime_s": 0.099026
             }
           ]
         },
         {
           "file": "ghz_nativegates_ibm_qiskit_opt3_25.qasm",
-          "path": "circuits/qasm_25/ghz_nativegates_ibm_qiskit_opt3_25.qasm",
+          "path": "experiments/data/in/circuits/qasm_25/ghz_nativegates_ibm_qiskit_opt3_25.qasm",
           "arch": "A",
           "device": "devices/A.json",
-          "num_seeds": 3,
-          "best_seed": 2,
+          "num_seeds": 5,
+          "best_seed": 0,
           "best": {
-            "seed": 2,
-            "effective_seed": 2,
-            "teledata": 5,
+            "seed": 0,
+            "effective_seed": 0,
+            "teledata": 4,
             "telegate": 0,
-            "inter_core": 5,
-            "swaps": 54,
+            "inter_core": 4,
+            "swaps": 45,
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.021823
+            "runtime_s": 0.018468
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 4,
+              "telegate": 0,
+              "inter_core": 4,
+              "swaps": 45,
+              "deadlocks": 0,
+              "runtime_s": 0.018468
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -139,7 +181,7 @@
               "inter_core": 9,
               "swaps": 60,
               "deadlocks": 0,
-              "runtime_s": 0.022382
+              "runtime_s": 0.021025
             },
             {
               "seed": 2,
@@ -153,7 +195,7 @@
               "inter_core": 5,
               "swaps": 54,
               "deadlocks": 0,
-              "runtime_s": 0.021823
+              "runtime_s": 0.020405
             },
             {
               "seed": 3,
@@ -167,16 +209,30 @@
               "inter_core": 6,
               "swaps": 54,
               "deadlocks": 0,
-              "runtime_s": 0.020163
+              "runtime_s": 0.020076
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 5,
+              "telegate": 0,
+              "inter_core": 5,
+              "swaps": 43,
+              "deadlocks": 0,
+              "runtime_s": 0.017412
             }
           ]
         },
         {
           "file": "graphstate_nativegates_ibm_qiskit_opt3_25.qasm",
-          "path": "circuits/qasm_25/graphstate_nativegates_ibm_qiskit_opt3_25.qasm",
+          "path": "experiments/data/in/circuits/qasm_25/graphstate_nativegates_ibm_qiskit_opt3_25.qasm",
           "arch": "A",
           "device": "devices/A.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 2,
           "best": {
             "seed": 2,
@@ -188,11 +244,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.029601
+            "runtime_s": 0.035553
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 13,
+              "telegate": 0,
+              "inter_core": 13,
+              "swaps": 72,
+              "deadlocks": 0,
+              "runtime_s": 0.045363
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -205,7 +275,7 @@
               "inter_core": 12,
               "swaps": 92,
               "deadlocks": 0,
-              "runtime_s": 0.037356
+              "runtime_s": 0.047135
             },
             {
               "seed": 2,
@@ -219,7 +289,7 @@
               "inter_core": 12,
               "swaps": 59,
               "deadlocks": 0,
-              "runtime_s": 0.029601
+              "runtime_s": 0.035553
             },
             {
               "seed": 3,
@@ -233,16 +303,30 @@
               "inter_core": 14,
               "swaps": 93,
               "deadlocks": 0,
-              "runtime_s": 0.040719
+              "runtime_s": 0.051518
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 15,
+              "telegate": 0,
+              "inter_core": 15,
+              "swaps": 97,
+              "deadlocks": 0,
+              "runtime_s": 0.053176
             }
           ]
         },
         {
           "file": "qft_nativegates_ibm_qiskit_opt3_25.qasm",
-          "path": "circuits/qasm_25/qft_nativegates_ibm_qiskit_opt3_25.qasm",
+          "path": "experiments/data/in/circuits/qasm_25/qft_nativegates_ibm_qiskit_opt3_25.qasm",
           "arch": "A",
           "device": "devices/A.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 3,
           "best": {
             "seed": 3,
@@ -254,11 +338,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.111074
+            "runtime_s": 0.147317
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 42,
+              "telegate": 2,
+              "inter_core": 44,
+              "swaps": 416,
+              "deadlocks": 0,
+              "runtime_s": 0.126962
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -271,7 +369,7 @@
               "inter_core": 53,
               "swaps": 435,
               "deadlocks": 0,
-              "runtime_s": 0.150934
+              "runtime_s": 0.136901
             },
             {
               "seed": 2,
@@ -285,7 +383,7 @@
               "inter_core": 60,
               "swaps": 495,
               "deadlocks": 0,
-              "runtime_s": 0.130491
+              "runtime_s": 0.208036
             },
             {
               "seed": 3,
@@ -299,16 +397,30 @@
               "inter_core": 40,
               "swaps": 408,
               "deadlocks": 0,
-              "runtime_s": 0.111074
+              "runtime_s": 0.147317
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 49,
+              "telegate": 0,
+              "inter_core": 49,
+              "swaps": 458,
+              "deadlocks": 0,
+              "runtime_s": 0.161886
             }
           ]
         },
         {
           "file": "qnn_nativegates_ibm_qiskit_opt3_25.qasm",
-          "path": "circuits/qasm_25/qnn_nativegates_ibm_qiskit_opt3_25.qasm",
+          "path": "experiments/data/in/circuits/qasm_25/qnn_nativegates_ibm_qiskit_opt3_25.qasm",
           "arch": "A",
           "device": "devices/A.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 2,
           "best": {
             "seed": 2,
@@ -320,11 +432,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.169331
+            "runtime_s": 0.206195
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 58,
+              "telegate": 0,
+              "inter_core": 58,
+              "swaps": 760,
+              "deadlocks": 0,
+              "runtime_s": 0.264452
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -337,7 +463,7 @@
               "inter_core": 93,
               "swaps": 754,
               "deadlocks": 0,
-              "runtime_s": 0.204622
+              "runtime_s": 0.241345
             },
             {
               "seed": 2,
@@ -351,7 +477,7 @@
               "inter_core": 53,
               "swaps": 673,
               "deadlocks": 0,
-              "runtime_s": 0.169331
+              "runtime_s": 0.206195
             },
             {
               "seed": 3,
@@ -365,16 +491,30 @@
               "inter_core": 89,
               "swaps": 780,
               "deadlocks": 0,
-              "runtime_s": 0.208443
+              "runtime_s": 0.306966
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 93,
+              "telegate": 0,
+              "inter_core": 93,
+              "swaps": 752,
+              "deadlocks": 0,
+              "runtime_s": 0.248424
             }
           ]
         },
         {
           "file": "random_nativegates_ibm_qiskit_opt3_25.qasm",
-          "path": "circuits/qasm_25/random_nativegates_ibm_qiskit_opt3_25.qasm",
+          "path": "experiments/data/in/circuits/qasm_25/random_nativegates_ibm_qiskit_opt3_25.qasm",
           "arch": "A",
           "device": "devices/A.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 1,
           "best": {
             "seed": 1,
@@ -386,11 +526,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.439510
+            "runtime_s": 0.618123
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 290,
+              "telegate": 1,
+              "inter_core": 291,
+              "swaps": 1476,
+              "deadlocks": 0,
+              "runtime_s": 0.649035
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -403,7 +557,7 @@
               "inter_core": 248,
               "swaps": 1339,
               "deadlocks": 0,
-              "runtime_s": 0.439510
+              "runtime_s": 0.618123
             },
             {
               "seed": 2,
@@ -417,7 +571,7 @@
               "inter_core": 269,
               "swaps": 1429,
               "deadlocks": 0,
-              "runtime_s": 0.417446
+              "runtime_s": 0.633994
             },
             {
               "seed": 3,
@@ -431,7 +585,21 @@
               "inter_core": 287,
               "swaps": 1488,
               "deadlocks": 0,
-              "runtime_s": 0.517450
+              "runtime_s": 0.706642
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 307,
+              "telegate": 4,
+              "inter_core": 311,
+              "swaps": 1586,
+              "deadlocks": 0,
+              "runtime_s": 0.767013
             }
           ]
         }
@@ -439,16 +607,16 @@
     },
     {
       "batch": "qasm_64",
-      "qasm_dir": "circuits/qasm_64",
+      "qasm_dir": "experiments/data/in/circuits/qasm_64",
       "arch": "B",
       "device": "devices/B.json",
       "results": [
         {
           "file": "ae_nativegates_ibm_qiskit_opt3_64.qasm",
-          "path": "circuits/qasm_64/ae_nativegates_ibm_qiskit_opt3_64.qasm",
+          "path": "experiments/data/in/circuits/qasm_64/ae_nativegates_ibm_qiskit_opt3_64.qasm",
           "arch": "B",
           "device": "devices/B.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 2,
           "best": {
             "seed": 2,
@@ -460,11 +628,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.660350
+            "runtime_s": 0.768714
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 207,
+              "telegate": 0,
+              "inter_core": 207,
+              "swaps": 2007,
+              "deadlocks": 0,
+              "runtime_s": 0.831041
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -477,7 +659,7 @@
               "inter_core": 222,
               "swaps": 2028,
               "deadlocks": 0,
-              "runtime_s": 0.703193
+              "runtime_s": 0.896064
             },
             {
               "seed": 2,
@@ -491,7 +673,7 @@
               "inter_core": 174,
               "swaps": 1821,
               "deadlocks": 0,
-              "runtime_s": 0.660350
+              "runtime_s": 0.768714
             },
             {
               "seed": 3,
@@ -505,16 +687,30 @@
               "inter_core": 201,
               "swaps": 1814,
               "deadlocks": 2,
-              "runtime_s": 0.663762
+              "runtime_s": 0.815066
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 166,
+              "telegate": 60,
+              "inter_core": 226,
+              "swaps": 1819,
+              "deadlocks": 2,
+              "runtime_s": 0.854583
             }
           ]
         },
         {
           "file": "ghz_nativegates_ibm_qiskit_opt3_64.qasm",
-          "path": "circuits/qasm_64/ghz_nativegates_ibm_qiskit_opt3_64.qasm",
+          "path": "experiments/data/in/circuits/qasm_64/ghz_nativegates_ibm_qiskit_opt3_64.qasm",
           "arch": "B",
           "device": "devices/B.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 1,
           "best": {
             "seed": 1,
@@ -526,11 +722,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.044743
+            "runtime_s": 0.042258
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 9,
+              "telegate": 0,
+              "inter_core": 9,
+              "swaps": 157,
+              "deadlocks": 0,
+              "runtime_s": 0.051422
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -543,7 +753,7 @@
               "inter_core": 5,
               "swaps": 124,
               "deadlocks": 0,
-              "runtime_s": 0.044743
+              "runtime_s": 0.042258
             },
             {
               "seed": 2,
@@ -557,7 +767,7 @@
               "inter_core": 5,
               "swaps": 137,
               "deadlocks": 0,
-              "runtime_s": 0.047500
+              "runtime_s": 0.045172
             },
             {
               "seed": 3,
@@ -571,32 +781,60 @@
               "inter_core": 10,
               "swaps": 165,
               "deadlocks": 0,
-              "runtime_s": 0.055176
+              "runtime_s": 0.052216
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 6,
+              "telegate": 0,
+              "inter_core": 6,
+              "swaps": 114,
+              "deadlocks": 0,
+              "runtime_s": 0.039652
             }
           ]
         },
         {
           "file": "graphstate_nativegates_ibm_qiskit_opt3_64.qasm",
-          "path": "circuits/qasm_64/graphstate_nativegates_ibm_qiskit_opt3_64.qasm",
+          "path": "experiments/data/in/circuits/qasm_64/graphstate_nativegates_ibm_qiskit_opt3_64.qasm",
           "arch": "B",
           "device": "devices/B.json",
-          "num_seeds": 3,
-          "best_seed": 1,
+          "num_seeds": 5,
+          "best_seed": 0,
           "best": {
-            "seed": 1,
-            "effective_seed": 1,
+            "seed": 0,
+            "effective_seed": 0,
             "teledata": 41,
             "telegate": 0,
             "inter_core": 41,
-            "swaps": 340,
+            "swaps": 259,
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.312620
+            "runtime_s": 0.419381
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 41,
+              "telegate": 0,
+              "inter_core": 41,
+              "swaps": 259,
+              "deadlocks": 0,
+              "runtime_s": 0.419381
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -609,7 +847,7 @@
               "inter_core": 41,
               "swaps": 340,
               "deadlocks": 0,
-              "runtime_s": 0.312620
+              "runtime_s": 0.803043
             },
             {
               "seed": 2,
@@ -623,7 +861,7 @@
               "inter_core": 45,
               "swaps": 340,
               "deadlocks": 0,
-              "runtime_s": 0.237522
+              "runtime_s": 0.613233
             },
             {
               "seed": 3,
@@ -637,16 +875,30 @@
               "inter_core": 43,
               "swaps": 337,
               "deadlocks": 0,
-              "runtime_s": 0.325908
+              "runtime_s": 0.587352
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 43,
+              "telegate": 0,
+              "inter_core": 43,
+              "swaps": 317,
+              "deadlocks": 0,
+              "runtime_s": 0.485231
             }
           ]
         },
         {
           "file": "qft_nativegates_ibm_qiskit_opt3_64.qasm",
-          "path": "circuits/qasm_64/qft_nativegates_ibm_qiskit_opt3_64.qasm",
+          "path": "experiments/data/in/circuits/qasm_64/qft_nativegates_ibm_qiskit_opt3_64.qasm",
           "arch": "B",
           "device": "devices/B.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 1,
           "best": {
             "seed": 1,
@@ -658,11 +910,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.655802
+            "runtime_s": 0.657866
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 158,
+              "telegate": 0,
+              "inter_core": 158,
+              "swaps": 1849,
+              "deadlocks": 0,
+              "runtime_s": 0.803563
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -675,7 +941,7 @@
               "inter_core": 140,
               "swaps": 1790,
               "deadlocks": 0,
-              "runtime_s": 0.655802
+              "runtime_s": 0.657866
             },
             {
               "seed": 2,
@@ -689,7 +955,7 @@
               "inter_core": 154,
               "swaps": 1813,
               "deadlocks": 0,
-              "runtime_s": 0.642718
+              "runtime_s": 0.612864
             },
             {
               "seed": 3,
@@ -703,16 +969,30 @@
               "inter_core": 148,
               "swaps": 1755,
               "deadlocks": 0,
-              "runtime_s": 0.591759
+              "runtime_s": 0.649214
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 154,
+              "telegate": 0,
+              "inter_core": 154,
+              "swaps": 1748,
+              "deadlocks": 0,
+              "runtime_s": 0.590918
             }
           ]
         },
         {
           "file": "qnn_nativegates_ibm_qiskit_opt3_64.qasm",
-          "path": "circuits/qasm_64/qnn_nativegates_ibm_qiskit_opt3_64.qasm",
+          "path": "experiments/data/in/circuits/qasm_64/qnn_nativegates_ibm_qiskit_opt3_64.qasm",
           "arch": "B",
           "device": "devices/B.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 3,
           "best": {
             "seed": 3,
@@ -724,11 +1004,25 @@
             "depth": 0,
             "deadlocks": 2,
             "success": true,
-            "runtime_s": 1.895898
+            "runtime_s": 2.368077
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 366,
+              "telegate": 0,
+              "inter_core": 366,
+              "swaps": 5147,
+              "deadlocks": 0,
+              "runtime_s": 2.336071
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -741,7 +1035,7 @@
               "inter_core": 482,
               "swaps": 6082,
               "deadlocks": 4,
-              "runtime_s": 2.322874
+              "runtime_s": 3.223798
             },
             {
               "seed": 2,
@@ -755,7 +1049,7 @@
               "inter_core": 541,
               "swaps": 5757,
               "deadlocks": 0,
-              "runtime_s": 2.173622
+              "runtime_s": 2.681537
             },
             {
               "seed": 3,
@@ -769,16 +1063,30 @@
               "inter_core": 300,
               "swaps": 4880,
               "deadlocks": 2,
-              "runtime_s": 1.895898
+              "runtime_s": 2.368077
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 333,
+              "telegate": 946,
+              "inter_core": 1279,
+              "swaps": 6217,
+              "deadlocks": 0,
+              "runtime_s": 4.334425
             }
           ]
         },
         {
           "file": "random_nativegates_ibm_qiskit_opt3_64.qasm",
-          "path": "circuits/qasm_64/random_nativegates_ibm_qiskit_opt3_64.qasm",
+          "path": "experiments/data/in/circuits/qasm_64/random_nativegates_ibm_qiskit_opt3_64.qasm",
           "arch": "B",
           "device": "devices/B.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 1,
           "best": {
             "seed": 1,
@@ -790,11 +1098,25 @@
             "depth": 0,
             "deadlocks": 4,
             "success": true,
-            "runtime_s": 3.665018
+            "runtime_s": 5.529127
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 722,
+              "telegate": 26,
+              "inter_core": 748,
+              "swaps": 5048,
+              "deadlocks": 8,
+              "runtime_s": 6.307452
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -807,7 +1129,7 @@
               "inter_core": 679,
               "swaps": 4603,
               "deadlocks": 4,
-              "runtime_s": 3.665018
+              "runtime_s": 5.529127
             },
             {
               "seed": 2,
@@ -821,7 +1143,7 @@
               "inter_core": 749,
               "swaps": 5331,
               "deadlocks": 2,
-              "runtime_s": 4.938192
+              "runtime_s": 6.849476
             },
             {
               "seed": 3,
@@ -835,7 +1157,21 @@
               "inter_core": 732,
               "swaps": 4795,
               "deadlocks": 8,
-              "runtime_s": 3.305117
+              "runtime_s": 5.786488
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 659,
+              "telegate": 21,
+              "inter_core": 680,
+              "swaps": 4813,
+              "deadlocks": 4,
+              "runtime_s": 6.620604
             }
           ]
         }
@@ -843,16 +1179,16 @@
     },
     {
       "batch": "qasm_80",
-      "qasm_dir": "circuits/qasm_80",
+      "qasm_dir": "experiments/data/in/circuits/qasm_80",
       "arch": "C",
       "device": "devices/C.json",
       "results": [
         {
           "file": "ae_nativegates_ibm_qiskit_opt3_80.qasm",
-          "path": "circuits/qasm_80/ae_nativegates_ibm_qiskit_opt3_80.qasm",
+          "path": "experiments/data/in/circuits/qasm_80/ae_nativegates_ibm_qiskit_opt3_80.qasm",
           "arch": "C",
           "device": "devices/C.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 1,
           "best": {
             "seed": 1,
@@ -864,11 +1200,25 @@
             "depth": 0,
             "deadlocks": 2,
             "success": true,
-            "runtime_s": 0.920893
+            "runtime_s": 1.001947
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 238,
+              "telegate": 0,
+              "inter_core": 238,
+              "swaps": 2681,
+              "deadlocks": 0,
+              "runtime_s": 1.148358
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -881,7 +1231,7 @@
               "inter_core": 207,
               "swaps": 2217,
               "deadlocks": 2,
-              "runtime_s": 0.920893
+              "runtime_s": 1.001947
             },
             {
               "seed": 2,
@@ -895,7 +1245,7 @@
               "inter_core": 271,
               "swaps": 2983,
               "deadlocks": 0,
-              "runtime_s": 1.154520
+              "runtime_s": 1.342723
             },
             {
               "seed": 3,
@@ -909,16 +1259,30 @@
               "inter_core": 210,
               "swaps": 2168,
               "deadlocks": 0,
-              "runtime_s": 0.898206
+              "runtime_s": 0.921673
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 199,
+              "telegate": 86,
+              "inter_core": 285,
+              "swaps": 2517,
+              "deadlocks": 0,
+              "runtime_s": 1.188808
             }
           ]
         },
         {
           "file": "qft_nativegates_ibm_qiskit_opt3_80.qasm",
-          "path": "circuits/qasm_80/qft_nativegates_ibm_qiskit_opt3_80.qasm",
+          "path": "experiments/data/in/circuits/qasm_80/qft_nativegates_ibm_qiskit_opt3_80.qasm",
           "arch": "C",
           "device": "devices/C.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 2,
           "best": {
             "seed": 2,
@@ -930,11 +1294,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 1.231557
+            "runtime_s": 1.277104
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 219,
+              "telegate": 137,
+              "inter_core": 356,
+              "swaps": 2792,
+              "deadlocks": 2,
+              "runtime_s": 1.345185
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -947,7 +1325,7 @@
               "inter_core": 384,
               "swaps": 3138,
               "deadlocks": 2,
-              "runtime_s": 1.250413
+              "runtime_s": 1.461759
             },
             {
               "seed": 2,
@@ -961,7 +1339,7 @@
               "inter_core": 258,
               "swaps": 3027,
               "deadlocks": 0,
-              "runtime_s": 1.231557
+              "runtime_s": 1.277104
             },
             {
               "seed": 3,
@@ -975,32 +1353,60 @@
               "inter_core": 280,
               "swaps": 2892,
               "deadlocks": 0,
-              "runtime_s": 1.121020
+              "runtime_s": 1.367531
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 276,
+              "telegate": 50,
+              "inter_core": 326,
+              "swaps": 3058,
+              "deadlocks": 0,
+              "runtime_s": 1.361377
             }
           ]
         },
         {
           "file": "qnn_nativegates_ibm_qiskit_opt3_80.qasm",
-          "path": "circuits/qasm_80/qnn_nativegates_ibm_qiskit_opt3_80.qasm",
+          "path": "experiments/data/in/circuits/qasm_80/qnn_nativegates_ibm_qiskit_opt3_80.qasm",
           "arch": "C",
           "device": "devices/C.json",
-          "num_seeds": 3,
-          "best_seed": 3,
+          "num_seeds": 5,
+          "best_seed": 4,
           "best": {
-            "seed": 3,
-            "effective_seed": 3,
-            "teledata": 542,
-            "telegate": 0,
-            "inter_core": 542,
-            "swaps": 9094,
+            "seed": 4,
+            "effective_seed": 4,
+            "teledata": 438,
+            "telegate": 10,
+            "inter_core": 448,
+            "swaps": 9085,
             "depth": 0,
-            "deadlocks": 0,
+            "deadlocks": 4,
             "success": true,
-            "runtime_s": 4.960058
+            "runtime_s": 4.460586
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 484,
+              "telegate": 760,
+              "inter_core": 1244,
+              "swaps": 10109,
+              "deadlocks": 0,
+              "runtime_s": 6.286204
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -1013,7 +1419,7 @@
               "inter_core": 962,
               "swaps": 9654,
               "deadlocks": 4,
-              "runtime_s": 4.606010
+              "runtime_s": 6.280691
             },
             {
               "seed": 2,
@@ -1027,7 +1433,7 @@
               "inter_core": 604,
               "swaps": 9911,
               "deadlocks": 0,
-              "runtime_s": 4.636474
+              "runtime_s": 5.051242
             },
             {
               "seed": 3,
@@ -1041,16 +1447,30 @@
               "inter_core": 542,
               "swaps": 9094,
               "deadlocks": 0,
-              "runtime_s": 4.960058
+              "runtime_s": 4.825884
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 438,
+              "telegate": 10,
+              "inter_core": 448,
+              "swaps": 9085,
+              "deadlocks": 4,
+              "runtime_s": 4.460586
             }
           ]
         },
         {
           "file": "qpeexact_nativegates_ibm_qiskit_opt3_80.qasm",
-          "path": "circuits/qasm_80/qpeexact_nativegates_ibm_qiskit_opt3_80.qasm",
+          "path": "experiments/data/in/circuits/qasm_80/qpeexact_nativegates_ibm_qiskit_opt3_80.qasm",
           "arch": "C",
           "device": "devices/C.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 1,
           "best": {
             "seed": 1,
@@ -1062,11 +1482,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 1.657454
+            "runtime_s": 2.133970
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 357,
+              "telegate": 2,
+              "inter_core": 359,
+              "swaps": 3349,
+              "deadlocks": 2,
+              "runtime_s": 2.362405
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -1079,7 +1513,7 @@
               "inter_core": 288,
               "swaps": 2631,
               "deadlocks": 0,
-              "runtime_s": 1.657454
+              "runtime_s": 2.133970
             },
             {
               "seed": 2,
@@ -1093,7 +1527,7 @@
               "inter_core": 315,
               "swaps": 2835,
               "deadlocks": 0,
-              "runtime_s": 1.293994
+              "runtime_s": 1.678172
             },
             {
               "seed": 3,
@@ -1107,16 +1541,30 @@
               "inter_core": 398,
               "swaps": 3055,
               "deadlocks": 2,
-              "runtime_s": 1.675776
+              "runtime_s": 2.268627
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 421,
+              "telegate": 8,
+              "inter_core": 429,
+              "swaps": 3280,
+              "deadlocks": 0,
+              "runtime_s": 2.097435
             }
           ]
         },
         {
           "file": "random_nativegates_ibm_qiskit_opt3_80.qasm",
-          "path": "circuits/qasm_80/random_nativegates_ibm_qiskit_opt3_80.qasm",
+          "path": "experiments/data/in/circuits/qasm_80/random_nativegates_ibm_qiskit_opt3_80.qasm",
           "arch": "C",
           "device": "devices/C.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 3,
           "best": {
             "seed": 3,
@@ -1128,11 +1576,25 @@
             "depth": 0,
             "deadlocks": 30,
             "success": true,
-            "runtime_s": 41.850435
+            "runtime_s": 64.467846
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 5500,
+              "telegate": 133,
+              "inter_core": 5633,
+              "swaps": 44186,
+              "deadlocks": 22,
+              "runtime_s": 63.727850
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -1145,7 +1607,7 @@
               "inter_core": 5638,
               "swaps": 42822,
               "deadlocks": 10,
-              "runtime_s": 41.542052
+              "runtime_s": 61.703810
             },
             {
               "seed": 2,
@@ -1159,7 +1621,7 @@
               "inter_core": 5661,
               "swaps": 44265,
               "deadlocks": 18,
-              "runtime_s": 42.891416
+              "runtime_s": 65.333411
             },
             {
               "seed": 3,
@@ -1173,32 +1635,60 @@
               "inter_core": 5535,
               "swaps": 43710,
               "deadlocks": 30,
-              "runtime_s": 41.850435
+              "runtime_s": 64.467846
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 5443,
+              "telegate": 188,
+              "inter_core": 5631,
+              "swaps": 43342,
+              "deadlocks": 24,
+              "runtime_s": 62.146507
             }
           ]
         },
         {
           "file": "su2random_nativegates_ibm_qiskit_opt3_80.qasm",
-          "path": "circuits/qasm_80/su2random_nativegates_ibm_qiskit_opt3_80.qasm",
+          "path": "experiments/data/in/circuits/qasm_80/su2random_nativegates_ibm_qiskit_opt3_80.qasm",
           "arch": "C",
           "device": "devices/C.json",
-          "num_seeds": 3,
-          "best_seed": 1,
+          "num_seeds": 5,
+          "best_seed": 4,
           "best": {
-            "seed": 1,
-            "effective_seed": 1,
-            "teledata": 720,
-            "telegate": 71,
-            "inter_core": 791,
-            "swaps": 14131,
+            "seed": 4,
+            "effective_seed": 4,
+            "teledata": 617,
+            "telegate": 4,
+            "inter_core": 621,
+            "swaps": 12220,
             "depth": 0,
-            "deadlocks": 8,
+            "deadlocks": 2,
             "success": true,
-            "runtime_s": 5.704536
+            "runtime_s": 6.237757
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 642,
+              "telegate": 422,
+              "inter_core": 1064,
+              "swaps": 13414,
+              "deadlocks": 0,
+              "runtime_s": 8.002831
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -1211,7 +1701,7 @@
               "inter_core": 791,
               "swaps": 14131,
               "deadlocks": 8,
-              "runtime_s": 5.704536
+              "runtime_s": 7.887615
             },
             {
               "seed": 2,
@@ -1225,7 +1715,7 @@
               "inter_core": 998,
               "swaps": 13972,
               "deadlocks": 2,
-              "runtime_s": 5.740555
+              "runtime_s": 7.870809
             },
             {
               "seed": 3,
@@ -1239,7 +1729,21 @@
               "inter_core": 1337,
               "swaps": 15082,
               "deadlocks": 4,
-              "runtime_s": 6.609378
+              "runtime_s": 9.683787
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 617,
+              "telegate": 4,
+              "inter_core": 621,
+              "swaps": 12220,
+              "deadlocks": 2,
+              "runtime_s": 6.237757
             }
           ]
         }
@@ -1247,16 +1751,16 @@
     },
     {
       "batch": "qasm_95",
-      "qasm_dir": "circuits/qasm_95",
+      "qasm_dir": "experiments/data/in/circuits/qasm_95",
       "arch": "D",
       "device": "devices/D.json",
       "results": [
         {
           "file": "qft_nativegates_ibm_qiskit_opt3_95.qasm",
-          "path": "circuits/qasm_95/qft_nativegates_ibm_qiskit_opt3_95.qasm",
+          "path": "experiments/data/in/circuits/qasm_95/qft_nativegates_ibm_qiskit_opt3_95.qasm",
           "arch": "D",
           "device": "devices/D.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 3,
           "best": {
             "seed": 3,
@@ -1268,11 +1772,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 3.269387
+            "runtime_s": 3.358229
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 1,
+              "failed_attempts": 1,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 304,
+              "telegate": 4,
+              "inter_core": 308,
+              "swaps": 2847,
+              "deadlocks": 0,
+              "runtime_s": 3.638069
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -1285,7 +1803,7 @@
               "inter_core": 308,
               "swaps": 2847,
               "deadlocks": 0,
-              "runtime_s": 1.330163
+              "runtime_s": 1.589804
             },
             {
               "seed": 2,
@@ -1299,7 +1817,7 @@
               "inter_core": 253,
               "swaps": 2909,
               "deadlocks": 0,
-              "runtime_s": 1.327108
+              "runtime_s": 1.463217
             },
             {
               "seed": 3,
@@ -1313,16 +1831,30 @@
               "inter_core": 214,
               "swaps": 2589,
               "deadlocks": 0,
-              "runtime_s": 3.269387
+              "runtime_s": 3.358229
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 214,
+              "telegate": 0,
+              "inter_core": 214,
+              "swaps": 2589,
+              "deadlocks": 0,
+              "runtime_s": 1.237438
             }
           ]
         },
         {
           "file": "qpeexact_nativegates_ibm_qiskit_opt3_95.qasm",
-          "path": "circuits/qasm_95/qpeexact_nativegates_ibm_qiskit_opt3_95.qasm",
+          "path": "experiments/data/in/circuits/qasm_95/qpeexact_nativegates_ibm_qiskit_opt3_95.qasm",
           "arch": "D",
           "device": "devices/D.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": 2,
           "best": {
             "seed": 2,
@@ -1334,11 +1866,25 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 1.383452
+            "runtime_s": 1.485828
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 0,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 364,
+              "telegate": 86,
+              "inter_core": 450,
+              "swaps": 3253,
+              "deadlocks": 10,
+              "runtime_s": 2.357387
+            },
             {
               "seed": 1,
               "effective_seed": 1,
@@ -1351,7 +1897,7 @@
               "inter_core": 368,
               "swaps": 3195,
               "deadlocks": 2,
-              "runtime_s": 1.544257
+              "runtime_s": 1.903240
             },
             {
               "seed": 2,
@@ -1365,7 +1911,7 @@
               "inter_core": 274,
               "swaps": 3037,
               "deadlocks": 0,
-              "runtime_s": 1.383452
+              "runtime_s": 1.485828
             },
             {
               "seed": 3,
@@ -1379,7 +1925,21 @@
               "inter_core": 433,
               "swaps": 3488,
               "deadlocks": 4,
-              "runtime_s": 1.802543
+              "runtime_s": 2.347837
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 370,
+              "telegate": 0,
+              "inter_core": 370,
+              "swaps": 2907,
+              "deadlocks": 0,
+              "runtime_s": 1.669866
             }
           ]
         }
@@ -1387,21 +1947,35 @@
     },
     {
       "batch": "qasm_200",
-      "qasm_dir": "circuits/qasm_200",
+      "qasm_dir": "experiments/data/in/circuits/qasm_200",
       "arch": "E",
       "device": "devices/E.json",
       "results": [
         {
           "file": "qft_nativegates_ibm_qiskit_opt3_200.qasm",
-          "path": "circuits/qasm_200/qft_nativegates_ibm_qiskit_opt3_200.qasm",
+          "path": "experiments/data/in/circuits/qasm_200/qft_nativegates_ibm_qiskit_opt3_200.qasm",
           "arch": "E",
           "device": "devices/E.json",
-          "num_seeds": 3,
+          "num_seeds": 5,
           "best_seed": null,
           "best": null,
           "num_successful_runs": 0,
           "all_successful": false,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
+              "crashed": false,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 533.568170
+            },
             {
               "seed": 1,
               "effective_seed": null,
@@ -1414,7 +1988,7 @@
               "inter_core": null,
               "swaps": null,
               "deadlocks": null,
-              "runtime_s": 499.871943
+              "runtime_s": 523.898508
             },
             {
               "seed": 2,
@@ -1428,7 +2002,7 @@
               "inter_core": null,
               "swaps": null,
               "deadlocks": null,
-              "runtime_s": 502.920937
+              "runtime_s": 520.668496
             },
             {
               "seed": 3,
@@ -1442,32 +2016,60 @@
               "inter_core": null,
               "swaps": null,
               "deadlocks": null,
-              "runtime_s": 523.773600
+              "runtime_s": 519.362395
+            },
+            {
+              "seed": 4,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
+              "crashed": false,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 519.610761
             }
           ]
         },
         {
           "file": "qpeexact_nativegates_ibm_qiskit_opt3_200.qasm",
-          "path": "circuits/qasm_200/qpeexact_nativegates_ibm_qiskit_opt3_200.qasm",
+          "path": "experiments/data/in/circuits/qasm_200/qpeexact_nativegates_ibm_qiskit_opt3_200.qasm",
           "arch": "E",
           "device": "devices/E.json",
-          "num_seeds": 3,
-          "best_seed": 1,
+          "num_seeds": 5,
+          "best_seed": 4,
           "best": {
-            "seed": 1,
-            "effective_seed": 3,
-            "teledata": 798,
-            "telegate": 198,
-            "inter_core": 996,
-            "swaps": 9030,
+            "seed": 4,
+            "effective_seed": 4,
+            "teledata": 752,
+            "telegate": 154,
+            "inter_core": 906,
+            "swaps": 8394,
             "depth": 0,
-            "deadlocks": 6,
+            "deadlocks": 32,
             "success": true,
-            "runtime_s": 20.037594
+            "runtime_s": 8.973797
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 3,
+              "failed_attempts": 3,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 798,
+              "telegate": 198,
+              "inter_core": 996,
+              "swaps": 9030,
+              "deadlocks": 6,
+              "runtime_s": 26.195845
+            },
             {
               "seed": 1,
               "effective_seed": 3,
@@ -1480,7 +2082,7 @@
               "inter_core": 996,
               "swaps": 9030,
               "deadlocks": 6,
-              "runtime_s": 20.037594
+              "runtime_s": 21.137299
             },
             {
               "seed": 2,
@@ -1494,7 +2096,7 @@
               "inter_core": 996,
               "swaps": 9030,
               "deadlocks": 6,
-              "runtime_s": 15.255465
+              "runtime_s": 16.308160
             },
             {
               "seed": 3,
@@ -1508,7 +2110,21 @@
               "inter_core": 996,
               "swaps": 9030,
               "deadlocks": 6,
-              "runtime_s": 7.296184
+              "runtime_s": 7.788509
+            },
+            {
+              "seed": 4,
+              "effective_seed": 4,
+              "failed_attempts": 0,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 752,
+              "telegate": 154,
+              "inter_core": 906,
+              "swaps": 8394,
+              "deadlocks": 32,
+              "runtime_s": 8.973797
             }
           ]
         }
@@ -1516,19 +2132,19 @@
     },
     {
       "batch": "qasm_360",
-      "qasm_dir": "circuits/qasm_360",
+      "qasm_dir": "experiments/data/in/circuits/qasm_360",
       "arch": "F",
       "device": "devices/F.json",
       "results": [
         {
           "file": "qft_nativegates_ibm_qiskit_opt3_360.qasm",
-          "path": "circuits/qasm_360/qft_nativegates_ibm_qiskit_opt3_360.qasm",
+          "path": "experiments/data/in/circuits/qasm_360/qft_nativegates_ibm_qiskit_opt3_360.qasm",
           "arch": "F",
           "device": "devices/F.json",
-          "num_seeds": 3,
-          "best_seed": 1,
+          "num_seeds": 5,
+          "best_seed": 0,
           "best": {
-            "seed": 1,
+            "seed": 0,
             "effective_seed": 31,
             "teledata": 1436,
             "telegate": 96,
@@ -1537,11 +2153,25 @@
             "depth": 0,
             "deadlocks": 52,
             "success": true,
-            "runtime_s": 347.860560
+            "runtime_s": 360.858874
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 31,
+              "failed_attempts": 31,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 1436,
+              "telegate": 96,
+              "inter_core": 1532,
+              "swaps": 16158,
+              "deadlocks": 52,
+              "runtime_s": 360.858874
+            },
             {
               "seed": 1,
               "effective_seed": 31,
@@ -1554,7 +2184,7 @@
               "inter_core": 1532,
               "swaps": 16158,
               "deadlocks": 52,
-              "runtime_s": 347.860560
+              "runtime_s": 353.662934
             },
             {
               "seed": 2,
@@ -1568,7 +2198,7 @@
               "inter_core": 1532,
               "swaps": 16158,
               "deadlocks": 52,
-              "runtime_s": 339.753031
+              "runtime_s": 343.055942
             },
             {
               "seed": 3,
@@ -1582,19 +2212,33 @@
               "inter_core": 1532,
               "swaps": 16158,
               "deadlocks": 52,
-              "runtime_s": 317.758148
+              "runtime_s": 333.388121
+            },
+            {
+              "seed": 4,
+              "effective_seed": 31,
+              "failed_attempts": 27,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 1436,
+              "telegate": 96,
+              "inter_core": 1532,
+              "swaps": 16158,
+              "deadlocks": 52,
+              "runtime_s": 327.694782
             }
           ]
         },
         {
           "file": "qpeexact_nativegates_ibm_qiskit_opt3_360.qasm",
-          "path": "circuits/qasm_360/qpeexact_nativegates_ibm_qiskit_opt3_360.qasm",
+          "path": "experiments/data/in/circuits/qasm_360/qpeexact_nativegates_ibm_qiskit_opt3_360.qasm",
           "arch": "F",
           "device": "devices/F.json",
-          "num_seeds": 3,
-          "best_seed": 1,
+          "num_seeds": 5,
+          "best_seed": 0,
           "best": {
-            "seed": 1,
+            "seed": 0,
             "effective_seed": 36,
             "teledata": 1812,
             "telegate": 6,
@@ -1603,11 +2247,25 @@
             "depth": 0,
             "deadlocks": 38,
             "success": true,
-            "runtime_s": 618.193700
+            "runtime_s": 677.255243
           },
-          "num_successful_runs": 3,
+          "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
+            {
+              "seed": 0,
+              "effective_seed": 36,
+              "failed_attempts": 36,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 1812,
+              "telegate": 6,
+              "inter_core": 1818,
+              "swaps": 17573,
+              "deadlocks": 38,
+              "runtime_s": 677.255243
+            },
             {
               "seed": 1,
               "effective_seed": 36,
@@ -1620,7 +2278,7 @@
               "inter_core": 1818,
               "swaps": 17573,
               "deadlocks": 38,
-              "runtime_s": 618.193700
+              "runtime_s": 658.945023
             },
             {
               "seed": 2,
@@ -1634,7 +2292,7 @@
               "inter_core": 1818,
               "swaps": 17573,
               "deadlocks": 38,
-              "runtime_s": 593.932465
+              "runtime_s": 692.998090
             },
             {
               "seed": 3,
@@ -1648,7 +2306,21 @@
               "inter_core": 1818,
               "swaps": 17573,
               "deadlocks": 38,
-              "runtime_s": 572.946867
+              "runtime_s": 709.171310
+            },
+            {
+              "seed": 4,
+              "effective_seed": 36,
+              "failed_attempts": 32,
+              "success": true,
+              "crashed": false,
+              "depth": 0,
+              "teledata": 1812,
+              "telegate": 6,
+              "inter_core": 1818,
+              "swaps": 17573,
+              "deadlocks": 38,
+              "runtime_s": 684.728677
             }
           ]
         }
