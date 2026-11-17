@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 #
-# Compare the "circuits" and "circuits_alt" circuit sets on the base (A-F)
+# Compare the "circuits" and "circuits_alt" circuit sets on the base (A-I)
 # devices. Every circuit batch of both sets (read from experiments/data/in/) is
 # run for a range of seeds, and the summary results (depth, teledata, telegate,
 # swaps, deadlocks, success, runtime) are collected into:
 #
-#   <out_dir>/telesabre_results.json       (circuits     on A-F)
-#   <out_dir>/telesabre_results_alt.json   (circuits_alt on A-F)
+#   <out_dir>/telesabre_results.json       (circuits     on A-I)
+#   <out_dir>/telesabre_results_alt.json   (circuits_alt on A-I)
 #
 # Only the "seed" value of the config is changed between runs: for each seed a
 # temporary copy of the config is written with just .config.seed replaced, so
@@ -62,6 +62,9 @@ BATCHES=(
     "qasm_95  devices/D.json"
     "qasm_200 devices/E.json"
     "qasm_360 devices/F.json"
+    "qasm_500  devices/G.json"
+    "qasm_1000 devices/H.json"
+    "qasm_1500 devices/I.json"
 )
 if [[ -n "${ONLY_BATCHES:-}" ]]; then
     kept=()
@@ -218,7 +221,7 @@ pass_no=0
 for set_name in "${CIRCUIT_SETS[@]}"; do
     pass_no=$((pass_no + 1))
     suffix=$(out_suffix "$set_name")
-    echo "===== Pass $pass_no/${#CIRCUIT_SETS[@]}: telesabre_results$suffix ($set_name on A-F) ====="
+    echo "===== Pass $pass_no/${#CIRCUIT_SETS[@]}: telesabre_results$suffix ($set_name on A-I) ====="
     echo
 
     batches_file="$TMPDIR_RUN/batches_$set_name.jsonl"
