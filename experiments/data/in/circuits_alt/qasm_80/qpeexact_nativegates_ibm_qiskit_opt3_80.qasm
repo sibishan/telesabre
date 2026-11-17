@@ -6,8 +6,8 @@
 
 OPENQASM 2.0;
 include "qelib1.inc";
-qreg q[95];
-qreg psi[1];
+qreg q[79];
+qreg psi[17];
 creg c[79];
 rz(pi/2) q[0];
 sx q[0];
