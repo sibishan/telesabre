@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T16:16:11Z",
+  "generated_at": "2026-11-19T14:52:12Z",
   "variant": "circuits",
   "config_path": "configs/default.json",
   "config": {
@@ -56,7 +56,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.108782
+            "runtime_s": 0.079361
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -67,13 +67,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 28,
               "telegate": 0,
               "inter_core": 28,
               "swaps": 342,
               "deadlocks": 0,
-              "runtime_s": 0.103350
+              "runtime_s": 0.086692
             },
             {
               "seed": 1,
@@ -81,13 +83,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 28,
               "telegate": 0,
               "inter_core": 28,
               "swaps": 357,
               "deadlocks": 0,
-              "runtime_s": 0.098026
+              "runtime_s": 0.085346
             },
             {
               "seed": 2,
@@ -95,13 +99,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 30,
               "telegate": 0,
               "inter_core": 30,
               "swaps": 315,
               "deadlocks": 0,
-              "runtime_s": 0.083590
+              "runtime_s": 0.077709
             },
             {
               "seed": 3,
@@ -109,13 +115,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 24,
               "telegate": 0,
               "inter_core": 24,
               "swaps": 325,
               "deadlocks": 0,
-              "runtime_s": 0.108782
+              "runtime_s": 0.079361
             },
             {
               "seed": 4,
@@ -123,13 +131,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 27,
               "telegate": 0,
               "inter_core": 27,
               "swaps": 336,
               "deadlocks": 0,
-              "runtime_s": 0.099026
+              "runtime_s": 0.081944
             }
           ]
         },
@@ -150,7 +160,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.018468
+            "runtime_s": 0.017166
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -161,13 +171,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 4,
               "telegate": 0,
               "inter_core": 4,
               "swaps": 45,
               "deadlocks": 0,
-              "runtime_s": 0.018468
+              "runtime_s": 0.017166
             },
             {
               "seed": 1,
@@ -175,13 +187,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 9,
               "telegate": 0,
               "inter_core": 9,
               "swaps": 60,
               "deadlocks": 0,
-              "runtime_s": 0.021025
+              "runtime_s": 0.020660
             },
             {
               "seed": 2,
@@ -189,13 +203,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5,
               "telegate": 0,
               "inter_core": 5,
               "swaps": 54,
               "deadlocks": 0,
-              "runtime_s": 0.020405
+              "runtime_s": 0.018444
             },
             {
               "seed": 3,
@@ -203,13 +219,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 6,
               "telegate": 0,
               "inter_core": 6,
               "swaps": 54,
               "deadlocks": 0,
-              "runtime_s": 0.020076
+              "runtime_s": 0.018971
             },
             {
               "seed": 4,
@@ -217,13 +235,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5,
               "telegate": 0,
               "inter_core": 5,
               "swaps": 43,
               "deadlocks": 0,
-              "runtime_s": 0.017412
+              "runtime_s": 0.016689
             }
           ]
         },
@@ -244,7 +264,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.035553
+            "runtime_s": 0.026944
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -255,13 +275,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 13,
               "telegate": 0,
               "inter_core": 13,
               "swaps": 72,
               "deadlocks": 0,
-              "runtime_s": 0.045363
+              "runtime_s": 0.030947
             },
             {
               "seed": 1,
@@ -269,13 +291,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 12,
               "telegate": 0,
               "inter_core": 12,
               "swaps": 92,
               "deadlocks": 0,
-              "runtime_s": 0.047135
+              "runtime_s": 0.035139
             },
             {
               "seed": 2,
@@ -283,13 +307,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 12,
               "telegate": 0,
               "inter_core": 12,
               "swaps": 59,
               "deadlocks": 0,
-              "runtime_s": 0.035553
+              "runtime_s": 0.026944
             },
             {
               "seed": 3,
@@ -297,13 +323,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 14,
               "telegate": 0,
               "inter_core": 14,
               "swaps": 93,
               "deadlocks": 0,
-              "runtime_s": 0.051518
+              "runtime_s": 0.036923
             },
             {
               "seed": 4,
@@ -311,13 +339,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 15,
               "telegate": 0,
               "inter_core": 15,
               "swaps": 97,
               "deadlocks": 0,
-              "runtime_s": 0.053176
+              "runtime_s": 0.036248
             }
           ]
         },
@@ -338,7 +368,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.147317
+            "runtime_s": 0.099799
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -349,13 +379,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 42,
               "telegate": 2,
               "inter_core": 44,
               "swaps": 416,
               "deadlocks": 0,
-              "runtime_s": 0.126962
+              "runtime_s": 0.100785
             },
             {
               "seed": 1,
@@ -363,13 +395,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 53,
               "telegate": 0,
               "inter_core": 53,
               "swaps": 435,
               "deadlocks": 0,
-              "runtime_s": 0.136901
+              "runtime_s": 0.107240
             },
             {
               "seed": 2,
@@ -377,13 +411,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 60,
               "telegate": 0,
               "inter_core": 60,
               "swaps": 495,
               "deadlocks": 0,
-              "runtime_s": 0.208036
+              "runtime_s": 0.118403
             },
             {
               "seed": 3,
@@ -391,13 +427,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 40,
               "telegate": 0,
               "inter_core": 40,
               "swaps": 408,
               "deadlocks": 0,
-              "runtime_s": 0.147317
+              "runtime_s": 0.099799
             },
             {
               "seed": 4,
@@ -405,13 +443,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 49,
               "telegate": 0,
               "inter_core": 49,
               "swaps": 458,
               "deadlocks": 0,
-              "runtime_s": 0.161886
+              "runtime_s": 0.113194
             }
           ]
         },
@@ -432,7 +472,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.206195
+            "runtime_s": 0.153816
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -443,13 +483,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 58,
               "telegate": 0,
               "inter_core": 58,
               "swaps": 760,
               "deadlocks": 0,
-              "runtime_s": 0.264452
+              "runtime_s": 0.179647
             },
             {
               "seed": 1,
@@ -457,13 +499,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 93,
               "telegate": 0,
               "inter_core": 93,
               "swaps": 754,
               "deadlocks": 0,
-              "runtime_s": 0.241345
+              "runtime_s": 0.186269
             },
             {
               "seed": 2,
@@ -471,13 +515,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 53,
               "telegate": 0,
               "inter_core": 53,
               "swaps": 673,
               "deadlocks": 0,
-              "runtime_s": 0.206195
+              "runtime_s": 0.153816
             },
             {
               "seed": 3,
@@ -485,13 +531,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 89,
               "telegate": 0,
               "inter_core": 89,
               "swaps": 780,
               "deadlocks": 0,
-              "runtime_s": 0.306966
+              "runtime_s": 0.189963
             },
             {
               "seed": 4,
@@ -499,13 +547,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 93,
               "telegate": 0,
               "inter_core": 93,
               "swaps": 752,
               "deadlocks": 0,
-              "runtime_s": 0.248424
+              "runtime_s": 0.182559
             }
           ]
         },
@@ -526,7 +576,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.618123
+            "runtime_s": 0.370797
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -537,13 +587,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 290,
               "telegate": 1,
               "inter_core": 291,
               "swaps": 1476,
               "deadlocks": 0,
-              "runtime_s": 0.649035
+              "runtime_s": 0.396233
             },
             {
               "seed": 1,
@@ -551,13 +603,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 248,
               "telegate": 0,
               "inter_core": 248,
               "swaps": 1339,
               "deadlocks": 0,
-              "runtime_s": 0.618123
+              "runtime_s": 0.370797
             },
             {
               "seed": 2,
@@ -565,13 +619,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 266,
               "telegate": 3,
               "inter_core": 269,
               "swaps": 1429,
               "deadlocks": 0,
-              "runtime_s": 0.633994
+              "runtime_s": 0.379257
             },
             {
               "seed": 3,
@@ -579,13 +635,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 285,
               "telegate": 2,
               "inter_core": 287,
               "swaps": 1488,
               "deadlocks": 0,
-              "runtime_s": 0.706642
+              "runtime_s": 0.419822
             },
             {
               "seed": 4,
@@ -593,13 +651,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 307,
               "telegate": 4,
               "inter_core": 311,
               "swaps": 1586,
               "deadlocks": 0,
-              "runtime_s": 0.767013
+              "runtime_s": 0.431025
             }
           ]
         }
@@ -628,7 +688,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.768714
+            "runtime_s": 0.558678
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -639,13 +699,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 207,
               "telegate": 0,
               "inter_core": 207,
               "swaps": 2007,
               "deadlocks": 0,
-              "runtime_s": 0.831041
+              "runtime_s": 0.631708
             },
             {
               "seed": 1,
@@ -653,13 +715,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 222,
               "telegate": 0,
               "inter_core": 222,
               "swaps": 2028,
               "deadlocks": 0,
-              "runtime_s": 0.896064
+              "runtime_s": 0.622489
             },
             {
               "seed": 2,
@@ -667,13 +731,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 174,
               "telegate": 0,
               "inter_core": 174,
               "swaps": 1821,
               "deadlocks": 0,
-              "runtime_s": 0.768714
+              "runtime_s": 0.558678
             },
             {
               "seed": 3,
@@ -681,13 +747,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 187,
               "telegate": 14,
               "inter_core": 201,
               "swaps": 1814,
               "deadlocks": 2,
-              "runtime_s": 0.815066
+              "runtime_s": 0.603689
             },
             {
               "seed": 4,
@@ -695,13 +763,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 166,
               "telegate": 60,
               "inter_core": 226,
               "swaps": 1819,
               "deadlocks": 2,
-              "runtime_s": 0.854583
+              "runtime_s": 0.606387
             }
           ]
         },
@@ -722,7 +792,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.042258
+            "runtime_s": 0.039682
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -733,13 +803,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 9,
               "telegate": 0,
               "inter_core": 9,
               "swaps": 157,
               "deadlocks": 0,
-              "runtime_s": 0.051422
+              "runtime_s": 0.048461
             },
             {
               "seed": 1,
@@ -747,13 +819,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5,
               "telegate": 0,
               "inter_core": 5,
               "swaps": 124,
               "deadlocks": 0,
-              "runtime_s": 0.042258
+              "runtime_s": 0.039682
             },
             {
               "seed": 2,
@@ -761,13 +835,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5,
               "telegate": 0,
               "inter_core": 5,
               "swaps": 137,
               "deadlocks": 0,
-              "runtime_s": 0.045172
+              "runtime_s": 0.042145
             },
             {
               "seed": 3,
@@ -775,13 +851,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 10,
               "telegate": 0,
               "inter_core": 10,
               "swaps": 165,
               "deadlocks": 0,
-              "runtime_s": 0.052216
+              "runtime_s": 0.050241
             },
             {
               "seed": 4,
@@ -789,13 +867,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 6,
               "telegate": 0,
               "inter_core": 6,
               "swaps": 114,
               "deadlocks": 0,
-              "runtime_s": 0.039652
+              "runtime_s": 0.037106
             }
           ]
         },
@@ -816,7 +896,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.419381
+            "runtime_s": 0.219069
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -827,13 +907,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 41,
               "telegate": 0,
               "inter_core": 41,
               "swaps": 259,
               "deadlocks": 0,
-              "runtime_s": 0.419381
+              "runtime_s": 0.219069
             },
             {
               "seed": 1,
@@ -841,13 +923,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 41,
               "telegate": 0,
               "inter_core": 41,
               "swaps": 340,
               "deadlocks": 0,
-              "runtime_s": 0.803043
+              "runtime_s": 0.305475
             },
             {
               "seed": 2,
@@ -855,13 +939,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 45,
               "telegate": 0,
               "inter_core": 45,
               "swaps": 340,
               "deadlocks": 0,
-              "runtime_s": 0.613233
+              "runtime_s": 0.225469
             },
             {
               "seed": 3,
@@ -869,13 +955,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 43,
               "telegate": 0,
               "inter_core": 43,
               "swaps": 337,
               "deadlocks": 0,
-              "runtime_s": 0.587352
+              "runtime_s": 0.271274
             },
             {
               "seed": 4,
@@ -883,13 +971,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 43,
               "telegate": 0,
               "inter_core": 43,
               "swaps": 317,
               "deadlocks": 0,
-              "runtime_s": 0.485231
+              "runtime_s": 0.227405
             }
           ]
         },
@@ -910,7 +1000,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 0.657866
+            "runtime_s": 0.551578
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -921,13 +1011,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 158,
               "telegate": 0,
               "inter_core": 158,
               "swaps": 1849,
               "deadlocks": 0,
-              "runtime_s": 0.803563
+              "runtime_s": 0.582769
             },
             {
               "seed": 1,
@@ -935,13 +1027,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 140,
               "telegate": 0,
               "inter_core": 140,
               "swaps": 1790,
               "deadlocks": 0,
-              "runtime_s": 0.657866
+              "runtime_s": 0.551578
             },
             {
               "seed": 2,
@@ -949,13 +1043,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 154,
               "telegate": 0,
               "inter_core": 154,
               "swaps": 1813,
               "deadlocks": 0,
-              "runtime_s": 0.612864
+              "runtime_s": 0.562655
             },
             {
               "seed": 3,
@@ -963,13 +1059,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 148,
               "telegate": 0,
               "inter_core": 148,
               "swaps": 1755,
               "deadlocks": 0,
-              "runtime_s": 0.649214
+              "runtime_s": 0.535902
             },
             {
               "seed": 4,
@@ -977,13 +1075,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 154,
               "telegate": 0,
               "inter_core": 154,
               "swaps": 1748,
               "deadlocks": 0,
-              "runtime_s": 0.590918
+              "runtime_s": 0.540866
             }
           ]
         },
@@ -1004,7 +1104,7 @@
             "depth": 0,
             "deadlocks": 2,
             "success": true,
-            "runtime_s": 2.368077
+            "runtime_s": 1.619988
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1015,13 +1115,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 366,
               "telegate": 0,
               "inter_core": 366,
               "swaps": 5147,
               "deadlocks": 0,
-              "runtime_s": 2.336071
+              "runtime_s": 1.729151
             },
             {
               "seed": 1,
@@ -1029,13 +1131,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 404,
               "telegate": 78,
               "inter_core": 482,
               "swaps": 6082,
               "deadlocks": 4,
-              "runtime_s": 3.223798
+              "runtime_s": 2.020926
             },
             {
               "seed": 2,
@@ -1043,13 +1147,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 441,
               "telegate": 100,
               "inter_core": 541,
               "swaps": 5757,
               "deadlocks": 0,
-              "runtime_s": 2.681537
+              "runtime_s": 1.982151
             },
             {
               "seed": 3,
@@ -1057,13 +1163,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 300,
               "telegate": 0,
               "inter_core": 300,
               "swaps": 4880,
               "deadlocks": 2,
-              "runtime_s": 2.368077
+              "runtime_s": 1.619988
             },
             {
               "seed": 4,
@@ -1071,13 +1179,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 333,
               "telegate": 946,
               "inter_core": 1279,
               "swaps": 6217,
               "deadlocks": 0,
-              "runtime_s": 4.334425
+              "runtime_s": 2.658796
             }
           ]
         },
@@ -1098,7 +1208,7 @@
             "depth": 0,
             "deadlocks": 4,
             "success": true,
-            "runtime_s": 5.529127
+            "runtime_s": 2.756783
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1109,13 +1219,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 722,
               "telegate": 26,
               "inter_core": 748,
               "swaps": 5048,
               "deadlocks": 8,
-              "runtime_s": 6.307452
+              "runtime_s": 3.252621
             },
             {
               "seed": 1,
@@ -1123,13 +1235,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 672,
               "telegate": 7,
               "inter_core": 679,
               "swaps": 4603,
               "deadlocks": 4,
-              "runtime_s": 5.529127
+              "runtime_s": 2.756783
             },
             {
               "seed": 2,
@@ -1137,13 +1251,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 695,
               "telegate": 54,
               "inter_core": 749,
               "swaps": 5331,
               "deadlocks": 2,
-              "runtime_s": 6.849476
+              "runtime_s": 3.360775
             },
             {
               "seed": 3,
@@ -1151,13 +1267,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 724,
               "telegate": 8,
               "inter_core": 732,
               "swaps": 4795,
               "deadlocks": 8,
-              "runtime_s": 5.786488
+              "runtime_s": 2.940449
             },
             {
               "seed": 4,
@@ -1165,13 +1283,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 659,
               "telegate": 21,
               "inter_core": 680,
               "swaps": 4813,
               "deadlocks": 4,
-              "runtime_s": 6.620604
+              "runtime_s": 3.331523
             }
           ]
         }
@@ -1200,7 +1320,7 @@
             "depth": 0,
             "deadlocks": 2,
             "success": true,
-            "runtime_s": 1.001947
+            "runtime_s": 0.797720
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1211,13 +1331,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 238,
               "telegate": 0,
               "inter_core": 238,
               "swaps": 2681,
               "deadlocks": 0,
-              "runtime_s": 1.148358
+              "runtime_s": 0.926296
             },
             {
               "seed": 1,
@@ -1225,13 +1347,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 207,
               "telegate": 0,
               "inter_core": 207,
               "swaps": 2217,
               "deadlocks": 2,
-              "runtime_s": 1.001947
+              "runtime_s": 0.797720
             },
             {
               "seed": 2,
@@ -1239,13 +1363,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 261,
               "telegate": 10,
               "inter_core": 271,
               "swaps": 2983,
               "deadlocks": 0,
-              "runtime_s": 1.342723
+              "runtime_s": 1.020066
             },
             {
               "seed": 3,
@@ -1253,13 +1379,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 210,
               "telegate": 0,
               "inter_core": 210,
               "swaps": 2168,
               "deadlocks": 0,
-              "runtime_s": 0.921673
+              "runtime_s": 0.772825
             },
             {
               "seed": 4,
@@ -1267,13 +1395,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 199,
               "telegate": 86,
               "inter_core": 285,
               "swaps": 2517,
               "deadlocks": 0,
-              "runtime_s": 1.188808
+              "runtime_s": 0.889283
             }
           ]
         },
@@ -1294,7 +1424,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 1.277104
+            "runtime_s": 1.038913
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1305,13 +1435,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 219,
               "telegate": 137,
               "inter_core": 356,
               "swaps": 2792,
               "deadlocks": 2,
-              "runtime_s": 1.345185
+              "runtime_s": 1.018792
             },
             {
               "seed": 1,
@@ -1319,13 +1451,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 279,
               "telegate": 105,
               "inter_core": 384,
               "swaps": 3138,
               "deadlocks": 2,
-              "runtime_s": 1.461759
+              "runtime_s": 1.129206
             },
             {
               "seed": 2,
@@ -1333,13 +1467,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 258,
               "telegate": 0,
               "inter_core": 258,
               "swaps": 3027,
               "deadlocks": 0,
-              "runtime_s": 1.277104
+              "runtime_s": 1.038913
             },
             {
               "seed": 3,
@@ -1347,13 +1483,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 208,
               "telegate": 72,
               "inter_core": 280,
               "swaps": 2892,
               "deadlocks": 0,
-              "runtime_s": 1.367531
+              "runtime_s": 1.026027
             },
             {
               "seed": 4,
@@ -1361,13 +1499,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 276,
               "telegate": 50,
               "inter_core": 326,
               "swaps": 3058,
               "deadlocks": 0,
-              "runtime_s": 1.361377
+              "runtime_s": 1.053375
             }
           ]
         },
@@ -1388,7 +1528,7 @@
             "depth": 0,
             "deadlocks": 4,
             "success": true,
-            "runtime_s": 4.460586
+            "runtime_s": 3.260696
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1399,13 +1539,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 484,
               "telegate": 760,
               "inter_core": 1244,
               "swaps": 10109,
               "deadlocks": 0,
-              "runtime_s": 6.286204
+              "runtime_s": 4.110744
             },
             {
               "seed": 1,
@@ -1413,13 +1555,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 568,
               "telegate": 394,
               "inter_core": 962,
               "swaps": 9654,
               "deadlocks": 4,
-              "runtime_s": 6.280691
+              "runtime_s": 3.964928
             },
             {
               "seed": 2,
@@ -1427,13 +1571,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 604,
               "telegate": 0,
               "inter_core": 604,
               "swaps": 9911,
               "deadlocks": 0,
-              "runtime_s": 5.051242
+              "runtime_s": 3.508372
             },
             {
               "seed": 3,
@@ -1441,13 +1587,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 542,
               "telegate": 0,
               "inter_core": 542,
               "swaps": 9094,
               "deadlocks": 0,
-              "runtime_s": 4.825884
+              "runtime_s": 3.315872
             },
             {
               "seed": 4,
@@ -1455,13 +1603,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 438,
               "telegate": 10,
               "inter_core": 448,
               "swaps": 9085,
               "deadlocks": 4,
-              "runtime_s": 4.460586
+              "runtime_s": 3.260696
             }
           ]
         },
@@ -1482,7 +1632,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 2.133970
+            "runtime_s": 1.313840
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1493,13 +1643,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 357,
               "telegate": 2,
               "inter_core": 359,
               "swaps": 3349,
               "deadlocks": 2,
-              "runtime_s": 2.362405
+              "runtime_s": 1.484511
             },
             {
               "seed": 1,
@@ -1507,13 +1659,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 277,
               "telegate": 11,
               "inter_core": 288,
               "swaps": 2631,
               "deadlocks": 0,
-              "runtime_s": 2.133970
+              "runtime_s": 1.313840
             },
             {
               "seed": 2,
@@ -1521,13 +1675,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 311,
               "telegate": 4,
               "inter_core": 315,
               "swaps": 2835,
               "deadlocks": 0,
-              "runtime_s": 1.678172
+              "runtime_s": 1.146262
             },
             {
               "seed": 3,
@@ -1535,13 +1691,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 382,
               "telegate": 16,
               "inter_core": 398,
               "swaps": 3055,
               "deadlocks": 2,
-              "runtime_s": 2.268627
+              "runtime_s": 1.401086
             },
             {
               "seed": 4,
@@ -1549,13 +1707,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 421,
               "telegate": 8,
               "inter_core": 429,
               "swaps": 3280,
               "deadlocks": 0,
-              "runtime_s": 2.097435
+              "runtime_s": 1.405550
             }
           ]
         },
@@ -1576,7 +1736,7 @@
             "depth": 0,
             "deadlocks": 30,
             "success": true,
-            "runtime_s": 64.467846
+            "runtime_s": 38.251387
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1587,13 +1747,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5500,
               "telegate": 133,
               "inter_core": 5633,
               "swaps": 44186,
               "deadlocks": 22,
-              "runtime_s": 63.727850
+              "runtime_s": 37.451020
             },
             {
               "seed": 1,
@@ -1601,13 +1763,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5588,
               "telegate": 50,
               "inter_core": 5638,
               "swaps": 42822,
               "deadlocks": 10,
-              "runtime_s": 61.703810
+              "runtime_s": 36.666368
             },
             {
               "seed": 2,
@@ -1615,13 +1779,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5540,
               "telegate": 121,
               "inter_core": 5661,
               "swaps": 44265,
               "deadlocks": 18,
-              "runtime_s": 65.333411
+              "runtime_s": 38.087484
             },
             {
               "seed": 3,
@@ -1629,13 +1795,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5454,
               "telegate": 81,
               "inter_core": 5535,
               "swaps": 43710,
               "deadlocks": 30,
-              "runtime_s": 64.467846
+              "runtime_s": 38.251387
             },
             {
               "seed": 4,
@@ -1643,13 +1811,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 5443,
               "telegate": 188,
               "inter_core": 5631,
               "swaps": 43342,
               "deadlocks": 24,
-              "runtime_s": 62.146507
+              "runtime_s": 36.490558
             }
           ]
         },
@@ -1670,7 +1840,7 @@
             "depth": 0,
             "deadlocks": 2,
             "success": true,
-            "runtime_s": 6.237757
+            "runtime_s": 4.307764
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1681,13 +1851,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 642,
               "telegate": 422,
               "inter_core": 1064,
               "swaps": 13414,
               "deadlocks": 0,
-              "runtime_s": 8.002831
+              "runtime_s": 5.035321
             },
             {
               "seed": 1,
@@ -1695,13 +1867,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 720,
               "telegate": 71,
               "inter_core": 791,
               "swaps": 14131,
               "deadlocks": 8,
-              "runtime_s": 7.887615
+              "runtime_s": 5.065343
             },
             {
               "seed": 2,
@@ -1709,13 +1883,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 649,
               "telegate": 349,
               "inter_core": 998,
               "swaps": 13972,
               "deadlocks": 2,
-              "runtime_s": 7.870809
+              "runtime_s": 5.102865
             },
             {
               "seed": 3,
@@ -1723,13 +1899,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 614,
               "telegate": 723,
               "inter_core": 1337,
               "swaps": 15082,
               "deadlocks": 4,
-              "runtime_s": 9.683787
+              "runtime_s": 5.876959
             },
             {
               "seed": 4,
@@ -1737,13 +1915,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 617,
               "telegate": 4,
               "inter_core": 621,
               "swaps": 12220,
               "deadlocks": 2,
-              "runtime_s": 6.237757
+              "runtime_s": 4.307764
             }
           ]
         }
@@ -1772,7 +1952,7 @@
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 3.358229
+            "runtime_s": 2.807313
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1783,13 +1963,15 @@
               "failed_attempts": 1,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 304,
               "telegate": 4,
               "inter_core": 308,
               "swaps": 2847,
               "deadlocks": 0,
-              "runtime_s": 3.638069
+              "runtime_s": 2.940254
             },
             {
               "seed": 1,
@@ -1797,13 +1979,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 304,
               "telegate": 4,
               "inter_core": 308,
               "swaps": 2847,
               "deadlocks": 0,
-              "runtime_s": 1.589804
+              "runtime_s": 1.181602
             },
             {
               "seed": 2,
@@ -1811,13 +1995,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 241,
               "telegate": 12,
               "inter_core": 253,
               "swaps": 2909,
               "deadlocks": 0,
-              "runtime_s": 1.463217
+              "runtime_s": 1.157950
             },
             {
               "seed": 3,
@@ -1825,13 +2011,15 @@
               "failed_attempts": 1,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 214,
               "telegate": 0,
               "inter_core": 214,
               "swaps": 2589,
               "deadlocks": 0,
-              "runtime_s": 3.358229
+              "runtime_s": 2.807313
             },
             {
               "seed": 4,
@@ -1839,13 +2027,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
               "teledata": 214,
               "telegate": 0,
               "inter_core": 214,
               "swaps": 2589,
               "deadlocks": 0,
-              "runtime_s": 1.237438
+              "runtime_s": 1.036931
             }
           ]
         },
@@ -1855,18 +2045,18 @@
           "arch": "D",
           "device": "devices/D.json",
           "num_seeds": 5,
-          "best_seed": 2,
+          "best_seed": 0,
           "best": {
-            "seed": 2,
-            "effective_seed": 2,
-            "teledata": 274,
-            "telegate": 0,
-            "inter_core": 274,
-            "swaps": 3037,
+            "seed": 0,
+            "effective_seed": 0,
+            "teledata": 298,
+            "telegate": 8,
+            "inter_core": 306,
+            "swaps": 3175,
             "depth": 0,
             "deadlocks": 0,
             "success": true,
-            "runtime_s": 1.485828
+            "runtime_s": 1.264418
           },
           "num_successful_runs": 5,
           "all_successful": true,
@@ -1877,13 +2067,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 364,
-              "telegate": 86,
-              "inter_core": 450,
-              "swaps": 3253,
-              "deadlocks": 10,
-              "runtime_s": 2.357387
+              "teledata": 298,
+              "telegate": 8,
+              "inter_core": 306,
+              "swaps": 3175,
+              "deadlocks": 0,
+              "runtime_s": 1.264418
             },
             {
               "seed": 1,
@@ -1891,13 +2083,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 368,
-              "telegate": 0,
-              "inter_core": 368,
-              "swaps": 3195,
+              "teledata": 378,
+              "telegate": 2,
+              "inter_core": 380,
+              "swaps": 3479,
               "deadlocks": 2,
-              "runtime_s": 1.903240
+              "runtime_s": 1.475601
             },
             {
               "seed": 2,
@@ -1905,13 +2099,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 274,
-              "telegate": 0,
-              "inter_core": 274,
-              "swaps": 3037,
+              "teledata": 323,
+              "telegate": 12,
+              "inter_core": 335,
+              "swaps": 3283,
               "deadlocks": 0,
-              "runtime_s": 1.485828
+              "runtime_s": 1.323839
             },
             {
               "seed": 3,
@@ -1919,13 +2115,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 411,
-              "telegate": 22,
-              "inter_core": 433,
-              "swaps": 3488,
-              "deadlocks": 4,
-              "runtime_s": 2.347837
+              "teledata": 318,
+              "telegate": 2,
+              "inter_core": 320,
+              "swaps": 2824,
+              "deadlocks": 0,
+              "runtime_s": 1.139377
             },
             {
               "seed": 4,
@@ -1933,13 +2131,15 @@
               "failed_attempts": 0,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 370,
+              "teledata": 338,
               "telegate": 0,
-              "inter_core": 370,
-              "swaps": 2907,
-              "deadlocks": 0,
-              "runtime_s": 1.669866
+              "inter_core": 338,
+              "swaps": 3285,
+              "deadlocks": 2,
+              "runtime_s": 1.368654
             }
           ]
         }
@@ -1957,80 +2157,101 @@
           "arch": "E",
           "device": "devices/E.json",
           "num_seeds": 5,
-          "best_seed": null,
-          "best": null,
-          "num_successful_runs": 0,
-          "all_successful": false,
+          "best_seed": 0,
+          "best": {
+            "seed": 0,
+            "effective_seed": 10,
+            "teledata": 633,
+            "telegate": 90,
+            "inter_core": 723,
+            "swaps": 8339,
+            "depth": 0,
+            "deadlocks": 18,
+            "success": true,
+            "runtime_s": 49.177890
+          },
+          "num_successful_runs": 5,
+          "all_successful": true,
           "runs": [
             {
               "seed": 0,
-              "effective_seed": null,
-              "failed_attempts": 99,
-              "success": false,
+              "effective_seed": 10,
+              "failed_attempts": 10,
+              "success": true,
               "crashed": false,
-              "depth": null,
-              "teledata": null,
-              "telegate": null,
-              "inter_core": null,
-              "swaps": null,
-              "deadlocks": null,
-              "runtime_s": 533.568170
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": 0,
+              "teledata": 633,
+              "telegate": 90,
+              "inter_core": 723,
+              "swaps": 8339,
+              "deadlocks": 18,
+              "runtime_s": 49.177890
             },
             {
               "seed": 1,
-              "effective_seed": null,
-              "failed_attempts": 99,
-              "success": false,
+              "effective_seed": 10,
+              "failed_attempts": 9,
+              "success": true,
               "crashed": false,
-              "depth": null,
-              "teledata": null,
-              "telegate": null,
-              "inter_core": null,
-              "swaps": null,
-              "deadlocks": null,
-              "runtime_s": 523.898508
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": 0,
+              "teledata": 633,
+              "telegate": 90,
+              "inter_core": 723,
+              "swaps": 8339,
+              "deadlocks": 18,
+              "runtime_s": 45.836530
             },
             {
               "seed": 2,
-              "effective_seed": null,
-              "failed_attempts": 99,
-              "success": false,
+              "effective_seed": 10,
+              "failed_attempts": 8,
+              "success": true,
               "crashed": false,
-              "depth": null,
-              "teledata": null,
-              "telegate": null,
-              "inter_core": null,
-              "swaps": null,
-              "deadlocks": null,
-              "runtime_s": 520.668496
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": 0,
+              "teledata": 633,
+              "telegate": 90,
+              "inter_core": 723,
+              "swaps": 8339,
+              "deadlocks": 18,
+              "runtime_s": 41.718388
             },
             {
               "seed": 3,
-              "effective_seed": null,
-              "failed_attempts": 99,
-              "success": false,
+              "effective_seed": 10,
+              "failed_attempts": 7,
+              "success": true,
               "crashed": false,
-              "depth": null,
-              "teledata": null,
-              "telegate": null,
-              "inter_core": null,
-              "swaps": null,
-              "deadlocks": null,
-              "runtime_s": 519.362395
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": 0,
+              "teledata": 633,
+              "telegate": 90,
+              "inter_core": 723,
+              "swaps": 8339,
+              "deadlocks": 18,
+              "runtime_s": 38.131382
             },
             {
               "seed": 4,
-              "effective_seed": null,
-              "failed_attempts": 99,
-              "success": false,
+              "effective_seed": 10,
+              "failed_attempts": 6,
+              "success": true,
               "crashed": false,
-              "depth": null,
-              "teledata": null,
-              "telegate": null,
-              "inter_core": null,
-              "swaps": null,
-              "deadlocks": null,
-              "runtime_s": 519.610761
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": 0,
+              "teledata": 633,
+              "telegate": 90,
+              "inter_core": 723,
+              "swaps": 8339,
+              "deadlocks": 18,
+              "runtime_s": 34.309850
             }
           ]
         },
@@ -2040,91 +2261,101 @@
           "arch": "E",
           "device": "devices/E.json",
           "num_seeds": 5,
-          "best_seed": 4,
+          "best_seed": 0,
           "best": {
-            "seed": 4,
-            "effective_seed": 4,
-            "teledata": 752,
-            "telegate": 154,
-            "inter_core": 906,
-            "swaps": 8394,
+            "seed": 0,
+            "effective_seed": 6,
+            "teledata": 720,
+            "telegate": 0,
+            "inter_core": 720,
+            "swaps": 8033,
             "depth": 0,
-            "deadlocks": 32,
+            "deadlocks": 0,
             "success": true,
-            "runtime_s": 8.973797
+            "runtime_s": 37.030398
           },
           "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
             {
               "seed": 0,
-              "effective_seed": 3,
-              "failed_attempts": 3,
+              "effective_seed": 6,
+              "failed_attempts": 6,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 798,
-              "telegate": 198,
-              "inter_core": 996,
-              "swaps": 9030,
-              "deadlocks": 6,
-              "runtime_s": 26.195845
+              "teledata": 720,
+              "telegate": 0,
+              "inter_core": 720,
+              "swaps": 8033,
+              "deadlocks": 0,
+              "runtime_s": 37.030398
             },
             {
               "seed": 1,
-              "effective_seed": 3,
-              "failed_attempts": 2,
+              "effective_seed": 6,
+              "failed_attempts": 5,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 798,
-              "telegate": 198,
-              "inter_core": 996,
-              "swaps": 9030,
-              "deadlocks": 6,
-              "runtime_s": 21.137299
+              "teledata": 720,
+              "telegate": 0,
+              "inter_core": 720,
+              "swaps": 8033,
+              "deadlocks": 0,
+              "runtime_s": 31.919436
             },
             {
               "seed": 2,
-              "effective_seed": 3,
-              "failed_attempts": 1,
+              "effective_seed": 6,
+              "failed_attempts": 4,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 798,
-              "telegate": 198,
-              "inter_core": 996,
-              "swaps": 9030,
-              "deadlocks": 6,
-              "runtime_s": 16.308160
+              "teledata": 720,
+              "telegate": 0,
+              "inter_core": 720,
+              "swaps": 8033,
+              "deadlocks": 0,
+              "runtime_s": 28.273771
             },
             {
               "seed": 3,
-              "effective_seed": 3,
-              "failed_attempts": 0,
+              "effective_seed": 6,
+              "failed_attempts": 3,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 798,
-              "telegate": 198,
-              "inter_core": 996,
-              "swaps": 9030,
-              "deadlocks": 6,
-              "runtime_s": 7.788509
+              "teledata": 720,
+              "telegate": 0,
+              "inter_core": 720,
+              "swaps": 8033,
+              "deadlocks": 0,
+              "runtime_s": 22.650563
             },
             {
               "seed": 4,
-              "effective_seed": 4,
-              "failed_attempts": 0,
+              "effective_seed": 6,
+              "failed_attempts": 2,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 752,
-              "telegate": 154,
-              "inter_core": 906,
-              "swaps": 8394,
-              "deadlocks": 32,
-              "runtime_s": 8.973797
+              "teledata": 720,
+              "telegate": 0,
+              "inter_core": 720,
+              "swaps": 8033,
+              "deadlocks": 0,
+              "runtime_s": 15.770614
             }
           ]
         }
@@ -2142,91 +2373,90 @@
           "arch": "F",
           "device": "devices/F.json",
           "num_seeds": 5,
-          "best_seed": 0,
-          "best": {
-            "seed": 0,
-            "effective_seed": 31,
-            "teledata": 1436,
-            "telegate": 96,
-            "inter_core": 1532,
-            "swaps": 16158,
-            "depth": 0,
-            "deadlocks": 52,
-            "success": true,
-            "runtime_s": 360.858874
-          },
-          "num_successful_runs": 5,
-          "all_successful": true,
+          "best_seed": null,
+          "best": null,
+          "num_successful_runs": 0,
+          "all_successful": false,
           "runs": [
             {
               "seed": 0,
-              "effective_seed": 31,
-              "failed_attempts": 31,
-              "success": true,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
               "crashed": false,
-              "depth": 0,
-              "teledata": 1436,
-              "telegate": 96,
-              "inter_core": 1532,
-              "swaps": 16158,
-              "deadlocks": 52,
-              "runtime_s": 360.858874
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 997.282051
             },
             {
               "seed": 1,
-              "effective_seed": 31,
-              "failed_attempts": 30,
-              "success": true,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
               "crashed": false,
-              "depth": 0,
-              "teledata": 1436,
-              "telegate": 96,
-              "inter_core": 1532,
-              "swaps": 16158,
-              "deadlocks": 52,
-              "runtime_s": 353.662934
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 999.901741
             },
             {
               "seed": 2,
-              "effective_seed": 31,
-              "failed_attempts": 29,
-              "success": true,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
               "crashed": false,
-              "depth": 0,
-              "teledata": 1436,
-              "telegate": 96,
-              "inter_core": 1532,
-              "swaps": 16158,
-              "deadlocks": 52,
-              "runtime_s": 343.055942
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 1009.419985
             },
             {
               "seed": 3,
-              "effective_seed": 31,
-              "failed_attempts": 28,
-              "success": true,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
               "crashed": false,
-              "depth": 0,
-              "teledata": 1436,
-              "telegate": 96,
-              "inter_core": 1532,
-              "swaps": 16158,
-              "deadlocks": 52,
-              "runtime_s": 333.388121
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 1002.992778
             },
             {
               "seed": 4,
-              "effective_seed": 31,
-              "failed_attempts": 27,
-              "success": true,
+              "effective_seed": null,
+              "failed_attempts": 99,
+              "success": false,
               "crashed": false,
-              "depth": 0,
-              "teledata": 1436,
-              "telegate": 96,
-              "inter_core": 1532,
-              "swaps": 16158,
-              "deadlocks": 52,
-              "runtime_s": 327.694782
+              "exit_code": 0,
+              "crash_reason": null,
+              "depth": null,
+              "teledata": null,
+              "telegate": null,
+              "inter_core": null,
+              "swaps": null,
+              "deadlocks": null,
+              "runtime_s": 988.882254
             }
           ]
         },
@@ -2239,88 +2469,98 @@
           "best_seed": 0,
           "best": {
             "seed": 0,
-            "effective_seed": 36,
-            "teledata": 1812,
+            "effective_seed": 8,
+            "teledata": 2067,
             "telegate": 6,
-            "inter_core": 1818,
-            "swaps": 17573,
+            "inter_core": 2073,
+            "swaps": 18755,
             "depth": 0,
-            "deadlocks": 38,
+            "deadlocks": 4,
             "success": true,
-            "runtime_s": 677.255243
+            "runtime_s": 121.004444
           },
           "num_successful_runs": 5,
           "all_successful": true,
           "runs": [
             {
               "seed": 0,
-              "effective_seed": 36,
-              "failed_attempts": 36,
+              "effective_seed": 8,
+              "failed_attempts": 8,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 1812,
+              "teledata": 2067,
               "telegate": 6,
-              "inter_core": 1818,
-              "swaps": 17573,
-              "deadlocks": 38,
-              "runtime_s": 677.255243
+              "inter_core": 2073,
+              "swaps": 18755,
+              "deadlocks": 4,
+              "runtime_s": 121.004444
             },
             {
               "seed": 1,
-              "effective_seed": 36,
-              "failed_attempts": 35,
+              "effective_seed": 8,
+              "failed_attempts": 7,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 1812,
+              "teledata": 2067,
               "telegate": 6,
-              "inter_core": 1818,
-              "swaps": 17573,
-              "deadlocks": 38,
-              "runtime_s": 658.945023
+              "inter_core": 2073,
+              "swaps": 18755,
+              "deadlocks": 4,
+              "runtime_s": 108.538991
             },
             {
               "seed": 2,
-              "effective_seed": 36,
-              "failed_attempts": 34,
+              "effective_seed": 8,
+              "failed_attempts": 6,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 1812,
+              "teledata": 2067,
               "telegate": 6,
-              "inter_core": 1818,
-              "swaps": 17573,
-              "deadlocks": 38,
-              "runtime_s": 692.998090
+              "inter_core": 2073,
+              "swaps": 18755,
+              "deadlocks": 4,
+              "runtime_s": 97.771156
             },
             {
               "seed": 3,
-              "effective_seed": 36,
-              "failed_attempts": 33,
+              "effective_seed": 8,
+              "failed_attempts": 5,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 1812,
+              "teledata": 2067,
               "telegate": 6,
-              "inter_core": 1818,
-              "swaps": 17573,
-              "deadlocks": 38,
-              "runtime_s": 709.171310
+              "inter_core": 2073,
+              "swaps": 18755,
+              "deadlocks": 4,
+              "runtime_s": 83.084947
             },
             {
               "seed": 4,
-              "effective_seed": 36,
-              "failed_attempts": 32,
+              "effective_seed": 8,
+              "failed_attempts": 4,
               "success": true,
               "crashed": false,
+              "exit_code": 0,
+              "crash_reason": null,
               "depth": 0,
-              "teledata": 1812,
+              "teledata": 2067,
               "telegate": 6,
-              "inter_core": 1818,
-              "swaps": 17573,
-              "deadlocks": 38,
-              "runtime_s": 684.728677
+              "inter_core": 2073,
+              "swaps": 18755,
+              "deadlocks": 4,
+              "runtime_s": 73.370115
             }
           ]
         }

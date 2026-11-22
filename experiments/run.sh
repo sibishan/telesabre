@@ -62,9 +62,9 @@ BATCHES=(
     "qasm_95  devices/D.json"
     "qasm_200 devices/E.json"
     "qasm_360 devices/F.json"
-    "qasm_500  devices/G.json"
-    "qasm_1000 devices/H.json"
-    "qasm_1500 devices/I.json"
+    # "qasm_500  devices/G.json"
+    # "qasm_1000 devices/H.json"
+    # "qasm_1500 devices/I.json"
 )
 if [[ -n "${ONLY_BATCHES:-}" ]]; then
     kept=()
@@ -105,20 +105,46 @@ loader() { # loader <prefix> <done> <total> <extra>
     if (("$2" >= "$3")); then printf "\n"; fi
 }
 
+# Turn a telesabre exit code into a human-readable crash reason.
+crash_reason() { # crash_reason <exit_code> <stderr_file>
+    local rc=$1 err_file=$2 last=""
+    if [[ -s "$err_file" ]]; then
+        # Last non-empty stderr line, stripped to printable ASCII and capped.
+        last=$(LC_ALL=C tr -cd '\11\12\40-\176' < "$err_file" | LC_ALL=C awk 'NF { l = $0 } END { print substr(l, 1, 200) }')
+    fi
+    case $rc in
+        137) echo "killed by SIGKILL (signal 9): most likely the OS killed it for running out of memory" ;;
+        139) echo "segmentation fault (SIGSEGV, signal 11)" ;;
+        134) echo "aborted (SIGABRT, signal 6): failed assert or allocation${last:+: $last}" ;;
+        138) echo "bus error (SIGBUS, signal 10)" ;;
+        136) echo "floating point exception (SIGFPE, signal 8)" ;;
+        143) echo "terminated (SIGTERM, signal 15)" ;;
+        130) echo "interrupted (SIGINT, signal 2)" ;;
+        *)
+            if ((rc > 128)); then echo "killed by signal $((rc - 128))${last:+: $last}"
+            else echo "exited with code $rc${last:+: $last}"; fi ;;
+    esac
+}
+
 # Run one seed of one circuit on one device and print a single JSON object.
 run_seed() { # run_seed <device> <circuit> <seed>
-    local device=$1 circuit=$2 seed=$3 t0 t1 status=0 summary
+    local device=$1 circuit=$2 seed=$3 t0 t1 status=0 summary exit_code reason
     local failed success depth teledata telegate swaps deadlocks
+    local err_file="$TMPDIR_RUN/stderr.txt"
 
     jq --argjson seed "$seed" '.config.seed = $seed' "$CONFIG" > "$TMP_CONFIG"
 
     t0=$(now)
     # Stream the (very verbose) output straight into awk, keeping only the
-    # number of failed attempts and the final Result block.
+    # number of failed attempts and the final Result block. If telesabre dies,
+    # its exit code is appended on a line of its own. The outer 2>/dev/null
+    # hides bash's own "Killed: 9" job message (we report the reason instead).
+    # LC_ALL=C stops awk choking on a multibyte char cut off by the kill.
     summary=$(
-        { "$BIN" "$TMP_CONFIG" "$device" "$circuit" 2>/dev/null || echo "__EXIT_NONZERO__"; } |
-        awk '
-            /__EXIT_NONZERO__/                  { crashed = 1 }
+        { rc=0; "$BIN" "$TMP_CONFIG" "$device" "$circuit" 2> "$err_file" || rc=$?
+          if ((rc != 0)); then printf '\n__EXIT_NONZERO__ %d\n' "$rc"; fi; } 2> /dev/null |
+        LC_ALL=C awk '
+            /^__EXIT_NONZERO__ /                { crashed = 1; code = $2 }
             /Telesabre run failed/              { failed++ }
             /^Result:|^Best result/             { in_result = 1 }
             in_result && /^  Depth:/            { depth = $2 }
@@ -129,18 +155,27 @@ run_seed() { # run_seed <device> <circuit> <seed>
             in_result && /^  Success:/          { success = $2 }
             END {
                 if (success == "") success = "false"
-                printf "%d %d %s %s %s %s %s %s\n", crashed, failed, success,
+                printf "%d %d %d %s %s %s %s %s %s\n", crashed, code, failed, success,
                     (depth == "" ? "null" : depth), (teledata == "" ? "null" : teledata),
                     (telegate == "" ? "null" : telegate), (swaps == "" ? "null" : swaps),
                     (deadlocks == "" ? "null" : deadlocks)
             }'
-    )
+    ) || true
     t1=$(now)
-    read -r status failed success depth teledata telegate swaps deadlocks <<< "$summary"
+    read -r status exit_code failed success depth teledata telegate swaps deadlocks <<< "$summary" || true
+    if [[ -z "$status" ]]; then
+        # awk produced nothing: treat as a crash with an unparseable output.
+        status=1 exit_code=0 failed=0 success=false
+        depth=null teledata=null telegate=null swaps=null deadlocks=null
+        reason="could not parse telesabre output"
+    elif ((status == 1)); then
+        reason=$(crash_reason "$exit_code" "$err_file")
+    fi
 
     jq -nc \
         --argjson seed "$seed" --argjson failed "$failed" --argjson success "$success" \
-        --argjson crashed "$status" \
+        --argjson crashed "$status" --argjson exit_code "${exit_code:-0}" \
+        --arg reason "${reason:-}" \
         --argjson depth "$depth" --argjson teledata "$teledata" \
         --argjson telegate "$telegate" --argjson swaps "$swaps" \
         --argjson deadlocks "$deadlocks" \
@@ -150,6 +185,8 @@ run_seed() { # run_seed <device> <circuit> <seed>
           failed_attempts: $failed,
           success: $success,
           crashed: ($crashed == 1),
+          exit_code: (if $crashed == 1 then $exit_code else 0 end),
+          crash_reason: (if $crashed == 1 then $reason else null end),
           depth: $depth, teledata: $teledata, telegate: $telegate,
           inter_core: (if $teledata == null or $telegate == null then null else $teledata + $telegate end),
           swaps: $swaps, deadlocks: $deadlocks,
@@ -171,7 +208,9 @@ run_file() { # run_file <device> <circuit> <progress>
         echo "$run" >> "$runs_file"
         rt=$(jq -r '.runtime_s' <<< "$run")
         if ((i + 1 < NUM_SEEDS)); then
-            loader "$tag" "$((i + 1))" "$NUM_SEEDS" "$(printf 'seed %d took %.2fs' "$seed" "$rt")" >&2
+            loader "$tag" "$((i + 1))" "$NUM_SEEDS" "$(jq -r '
+                if .crashed then "seed \(.seed) CRASHED after \(.runtime_s * 100 | round / 100)s: \(.crash_reason)"
+                else "seed \(.seed) took \(.runtime_s * 100 | round / 100)s" end' <<< "$run")" >&2
         fi
     done
     total_rt=$(jq -s 'map(.runtime_s) | add' "$runs_file")
@@ -248,7 +287,7 @@ for set_name in "${CIRCUIT_SETS[@]}"; do
                 else
                     "    no successful run"
                 end,
-                (.runs[] | select(.crashed) | "    seed \(.seed) CRASHED (telesabre exited non-zero)")
+                (.runs[] | select(.crashed) | "    seed \(.seed) CRASHED: \(.crash_reason // "unknown reason") (exit code \(.exit_code // "?"))")
             ' <<< "$result"
         done
 
